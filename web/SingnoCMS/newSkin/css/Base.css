@@ -1,0 +1,147 @@
+
+body {background-color:#fff;overflow:hidden}
+img{border:0}
+div,ul,li,body,form{margin:0;padding:0;overflow:hidden}
+ul,li{ list-style:none}
+p{margin:0}
+input,textarea,button,body,select{font-family:微软雅黑;font-size:12px}
+.red{color:#f00}
+.gray{color:#999}
+.grayBg{ background:#f2f2f2;padding:5px 10px; margin:10px 0 0 0}
+.blue{ color:#03C}
+.fl{float:left}
+.fr{float:right}
+.center{text-align:center}
+.txtCenter{text-align:center}
+.t{font-size:14px}
+.u{font-weight:bold}
+.show{display:block}
+.hide{display:none}
+.pointer{ cursor:pointer}
+span.exg{ margin:0 0 0 10px; color:#999;}
+span.required{ color:#f00; font-weight:; margin:0 10px; font-family:Tahoma, Geneva, sans-serif}
+
+
+a:link{color:#000;text-decoration:none;}
+a:visited{color:#000;text-decoration:none}
+a:hover{color:#f00;text-decoration:underline}
+a:focus{outline:none}
+
+/*-------------*/
+.navigator{ border-bottom:1px solid #eee; border-top:1px solid #eee; height:30px; margin:10px 5px 0 5px;}
+.navigator .line{ width:1px; height:30px; float:left; margin:0 3px; border-left:1px solid #eee}
+.navigator span{ padding:2px 5px; float:left; margin:3px}
+.navigator span.curr{background:#64A8E1; color:#fff}
+
+
+
+/*----表单列表----*/
+.forms{ width:100%; border-collapse:collapse; margin:10px 0; border:5px solid #fff; color:#333}
+.forms tbody tr td{ padding:10px 0; border-bottom:1px solid #eee;border-top:1px solid #eee; margin:-1px 0 0 0;}
+
+/*----数据列表----*/
+.tables{ width:100%; border-collapse:collapse; margin:10px 0; border:5px solid #fff; }
+.tables thead td{ background:url(../Images/table_bg.png); height:35px; padding:0 0 0 10px; color:#000}
+.tables tbody {border-bottom:1px solid #DCDCDC}
+.tables tbody tr:hover{ background:#FFFCDE}
+.tables tbody tr.hover{ background:#FFFCDE}
+.tables tbody tr {border-bottom:1px solid #DCDCDC;}
+.tables tbody tr td{ height:30px; border-top:1px solid #DCDCDC; padding:0 0 0 10px;color:#333}
+.tables tbody tr td a{ color:#444}
+.tables tbody tr td a:hover{ color:#f00}
+.tables tbody tr td a.blue:hover{ color:#039}
+.tables tfoot tr td { border-top:1px solid #DCDCDC}
+
+
+/*-------图标------*/
+.Ico_addInfo,.Ico_addInfo_hover,.Ico_addRSClass,.Ico_addRSClass_hover,.Ico_empty,.Ico_empty_hover,.Ico_del,.Ico_del_hover,.Ico_restore,.Ico_restore_hover,.Ico_create,.Ico_create_hover,.Ico_shift,.Ico_shift_hover,.Ico_audit,.Ico_audit_hover,.Ico_attr,.Ico_attr_hover,.Ico_edit,.Ico_edit_hover,.Ico_default,.Ico_default_hover,.Ico_copy,.Ico_copy_hover,.Ico_lock,.Ico_lock_hover,.Ico_unlock,.Ico_unlock_hover,.Ico_mail,.Ico_mail_hover,.Ico_userGroup,.Ico_userGroup_hover,.Ico_addUser,.Ico_addUser_hover,.Ico_toUp,.Ico_toUp_hover,.Ico_toDown,.Ico_toDown_hover{width:18px;height:18px;background:url(../Images/ctrlCmd.gif);margin:5px 3px;cursor:pointer; float:left}
+
+/*--添加信息--*/
+.Ico_addInfo{background-position:0 top}
+.Ico_addInfo:hover,.Ico_addInfo_hover{background-position:0 bottom}
+/*--添加子栏目--*/
+.Ico_addRSClass{background-position: -17px top}
+.Ico_addRSClass:hover,.Ico_addRSClass_hover{background-position: -17px bottom}
+/*--清空--*/
+.Ico_empty{background-position:-93px top}
+.Ico_empty:hover,.Ico_empty_hover{background-position:-93px bottom}
+/*--删除--*/
+.Ico_del{background-position:-35px top}
+.Ico_del:hover,.Ico_del_hover{background-position:-35px bottom}
+/*--还原--*/
+.Ico_restore{background-position:-70px top}
+.Ico_restore:hover,.Ico_restore_hover{background-position:-70px bottom}
+/*--新建--*/
+.Ico_create{background-position:-110px top}
+.Ico_create:hover,.Ico_create_hover{background-position:-110px bottom}
+/*--切换--*/
+.Ico_shift{background-position:-130px top}
+.Ico_shift:hover,.Ico_shift_hover{background-position:-130px bottom}
+/*--审核--*/
+.Ico_audit{background-position:-150px top}
+.Ico_audit:hover,.Ico_audit_hover{background-position:-150px bottom}
+/*--配置--*/
+.Ico_attr{background-position:-168px top}
+.Ico_attr:hover,.Ico_attr_hover{background-position:-168px bottom}
+/*--编辑--*/
+.Ico_edit{background-position:-187px top}
+.Ico_edit:hover,.Ico_edit_hover{background-position:-187px bottom}
+/*--默认--*/
+.Ico_default{background-position:-206px top}
+.Ico_default:hover,.Ico_default_hover{background-position:-206px bottom}
+/*--复制--*/
+.Ico_copy{background-position:-223px top}
+.Ico_copy:hover,.Ico_copy_hover{background-position:-223px bottom}
+/*--锁定--*/
+.Ico_lock{background-position:-242px top}
+.Ico_lock:hover,.Ico_lock_hover{background-position:-242px bottom}
+/*--解锁--*/
+.Ico_unlock{background-position:-260px top}
+.Ico_unlock:hover,.Ico_unlock_hover{background-position:-260px bottom}
+/*--邮件--*/
+.Ico_mail{background-position:-278px top}
+.Ico_mail:hover,.Ico_mail_hover{background-position:-278px bottom}
+/*--用户组--*/
+.Ico_userGroup{background-position:-301px top}
+.Ico_userGroup:hover,.Ico_userGroup_hover{background-position:-301px bottom}
+/*--添加用户--*/
+.Ico_addUser{background-position:-318px top}
+.Ico_addUser:hover,.Ico_addUser_hover{background-position:-318px bottom}
+/*--排序向上--*/
+.Ico_toUp{background-position:-340px top}
+.Ico_toUp:hover,.Ico_toUp_hover{background-position:-340px bottom}
+/*--排序向下--*/
+.Ico_toDown{background-position:-360px top}
+.Ico_toDown:hover,.Ico_toDown_hover{background-position:-360px bottom}
+
+/*-------搜索栏------*/
+#searchBar{ width:250px; height:auto; float:right; margin:5px 0 0 0}
+#searchBar .input,#searchBar .cmd,#searchBar .more,#searchBar .more_curr{height:22px; float:left;}
+#searchBar .input{ width:178px; border:1px solid #aaa; padding:0; height:20px; background:url(../Images/Plugin/input_bg.png);}
+#searchBar .input input{ width:168px; height:20px; padding:0 5px; margin:0; border:0;background:transparent;}
+#searchBar .cmd{ width:50px; border-top:1px solid #aaa;border-bottom:1px solid #aaa; height:20px; }
+#searchBar .cmd input{ width:50px; height:20px; padding:0; margin:0; text-align:center; line-height:18px; border:0; background:url(../Images/Plugin/cmd.png) -1px -1px }
+#searchBar .more{ width:15px; background:url(../Images/more_search.gif)}
+#searchBar:hover .input{border:1px solid #95CAFF;}
+#searchBar:hover .cmd{border-top:1px solid #95CAFF;border-bottom:1px solid #95CAFF;}
+#searchBar:hover .cmd input{ background-position:-1px -23px}
+#searchBar:hover .more{ background-position:0 -22px}
+#searchBar .more_curr{ width:15px; background:url(../Images/more_search.gif) 0 -44px}
+
+#searchMenu{ width:243px;height:auto;background:#EDF3F6;border:1px solid #417CBA;position:absolute;z-index:100;right:10px;top:40px;padding:5px 0;display:none}
+#searchMenu ul{ padding:5px 10px;}
+#searchMenu ul li{ border-top:1px solid #9CB8CC; padding:3px 0 0 0; height:25px; line-height:27px;}
+#searchMenu ul li div.fl{ width:50px; text-align:right}
+#searchMenu ul li div.fr{ width:163px;}
+#searchMenu ul li .S_input_text{ height:12px; width:153px;}
+#searchMenu ul li div.fr div.S_Calendar input.S_input_text{height:14px;}
+#searchMenu ul li select{ width:163px}
+
+/*-----选项卡----*/
+#classTab { width:100%; height:25px; background:#f2f2f2; border-bottom:1px solid #64A8E1;overflow:visible}
+#classTab ul{ padding:1px 10px 0 10px; height:25px; }
+#classTab ul li{ width:75px;height:23px;border:1px solid #f2f2f2;border-bottom:0;float:left;margin:0 5px;text-align:center;line-height:25px; cursor:pointer}
+#classTab ul li:hover{border:1px solid #ccc;border-bottom:0; background:#fff;color:#039;}
+#classTab ul li.hover{border:1px solid #ccc;border-bottom:0; background:#fff;color:#039;}
+#classTab ul li.curr{border:1px solid #64A8E1;border-bottom:0; background:url(../Images/bg.png) 0 -33px;  font-weight:bold; height:24px!important;height:25px; _position:relative;color:#039;}
+

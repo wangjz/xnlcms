@@ -1,0 +1,157 @@
+
+/*---select---*/
+select{-moz-border-radius:2px;border-radius:2px; border:1px solid #999;}
+select:focus{outline:none;}
+
+/*---input---*/
+.S_input_text { border:1px solid #ccc; height:14px;padding:4px;font-size:12px;line-height:14px;color:#333; background:url(../Images/Plugin/input_bg.png) repeat-x;
+-moz-border-radius:3px;border-radius:3px;}
+textarea {resize:none}
+textarea.S_input_text {height:auto; overflow:auto}
+.S_input_text:hover,.S_input_text_hover{border:1px solid #95CAFF;}
+.S_input_text.S_focus{ border:1px solid #64A8E1; color:#000;background:url(../Images/Plugin/focus_bg.png) #fff 0 -10px repeat-x;}
+.S_input_text:focus{outline:none;}
+
+/*---Button---*/
+.S_buttonOuter{height:22px;background:url('../images/Plugin/cmd.png') right top;padding:3px 1px 2px 0;*padding:0 1px 0 0;cursor:default;}
+.S_buttonOuter:hover,.S_buttonOuter_hover{background-position:right -22px;}
+.S_buttonOuter:hover span,.S_buttonOuter_hover span{background-position:left -22px; }
+.S_buttonOuter:hover span input,.S_buttonOuter_hover span input{ color:#000}
+.S_buttonInner{height:22px;background:url('../images/Plugin/cmd.png') no-repeat left top; padding:3px 1px 2px 1px;*padding:0 1px 0 1px;}
+.S_button{width:auto;height:22px;line-height:20px;*line-height:22px;_line-height:23px;text-align:center;margin:0;outline:none;
+	padding:0 8px;*padding:0 3px;padding:0 8px\0;
+	background:url(../images/Plugin/cmd_webkit.png);*background:transparent;background:transparent\0;
+	border:1px solid #A6A6A6;*border:none;border:0\0;
+	-moz-border-radius:2px;border-radius:2px;}
+.S_button:hover{border:1px solid #227ECA;*border:0;border:0\0;background:url(../images/Plugin/cmd_webkit.png) 0 -20px;*background:transparent;background:transparent\0;}
+.S_button:active{background:url(../images/Plugin/cmd_webkit.png) 0 -40px;background:transparent\0;}
+.S_button::-moz-focus-inner{border:0;}
+.S_buttonOuter.down{background-position:right -44px}
+.S_buttonOuter.down span{background-position:left -44px}
+
+/*----Tree----*/
+.S_tree_list { border:1px solid #95CAFF; overflow-y:auto;overflow-x:hidden;-moz-border-radius:4px;border-radius:4px;}
+.S_tree_list ul{ list-style:none; margin:0; padding:0; width:100%; height:auto}
+.S_tree_list li{ list-style:none; margin:0; padding:0; width:100%; height:auto; float:left\0;*margin:0 0 -4px 0}
+.S_tree_list .listItem{ height:20px; line-height:18px; padding:1px 0;-moz-border-radius:2px;border-radius:2px;}
+.S_tree_list .listItem span{ cursor:pointer}
+.S_tree_list .listItem span.listItemFl{ float:left}
+.S_tree_list .listItem:hover,.S_tree_list .listItem_hover{ background:#95CAFF;-webkit-transition-property:'background';-webkit-transition-duration:0.3s;}
+.S_tree_list .listItem_select{ background:#95CAFF;}
+.S_tree_list li span{ height:20px; overflow:hidden}
+.S_tree_list li input{ width:14px; height:14px; margin:3px 3px 0 2px;margin:0\0; float:left}
+.S_tree_list li img.switch_cmd{ cursor:pointer}
+
+/*---slider---*/
+.S_Slider{ width:200px; height:14px; background:url(../images/Plugin/slider_bg.png) repeat-x}
+.S_Slider .S_sliderTooltip{ width:26px;height:16px;background:#000;text-align:center;line-height:16px;color:#fff;position:absolute;font-size:12px;font-weight:bold; z-index:100; margin:-25px 0 0 -7px; display:none}
+.S_Slider .S_x_slider{ width:11px; height:14px; background:url(../images/Plugin/slider_x.gif); position:absolute; margin:-5px 0 0 0;}
+
+/*-----alert----*/
+#S_alertMask{ width:1200px; height:600px; position:absolute; z-index:10000009; background:#000;filter:alpha(opacity=20);opacity:0.2; left:0; top:0}
+
+#S_XAlert{ position:absolute; z-index:10000010;}
+#S_XAlert .titleBar{ width:100%; height:26px;}
+#S_XAlert .titleBar .left,#S_XAlert .titleBar .center,#S_XAlert .titleBar .close_cmd,#S_XAlert .titleBar .right{height:28px;float:left;background:url(../images/Plugin/alert_bg.gif)}
+#S_XAlert .titleBar .left{ width:5px;}
+#S_XAlert .titleBar .center{ width:100px; background-position:0 -28px; line-height:28px; color:#fff; padding:0 0 0 10px;}
+#S_XAlert .titleBar .close_cmd{ width:15px;background-position:0 -28px}
+#S_XAlert .titleBar .close_cmd div{ width:15px; height:14px; background:url(../images/Plugin/alert_close.gif) no-repeat; cursor:pointer; margin:7px 0 0 0}
+#S_XAlert .titleBar .close_cmd div:hover{background-position:-15px 0;}
+#S_XAlert .titleBar .close_cmd div.hover{background-position:-15px 0; border:0}
+#S_XAlert .titleBar .right{ width:5px;background-position:-5px 0}
+#S_XAlert .content{ width:auto; border:1px solid #06C; background:#fff}
+
+#S_XAlert .content .frameAlert,#S_XAlert .content .frameSuccess,#S_XAlert .content .frameFail,#S_XAlert .content .frameText{line-height:180%;padding:15px 0 0 80px; height:60px; overflow:visible; font-size:14px;}
+#S_XAlert .content .frameAlert{ background:url(../images/Plugin/error.gif) no-repeat 25px; }
+#S_XAlert .content .frameSuccess{background:url(../images/Plugin/accept.gif) no-repeat 25px; }
+#S_XAlert .content .frameFail{background:url(../images/Plugin/cancel.gif) no-repeat 25px;}
+#S_XAlert .content .frameText{ padding:10px; font-size:12px}
+#S_XAlert .content .frame{ width:100%}
+#S_XAlert .content .frame iframe{ width:100%;}
+#S_XAlert .content .btmDiv{ width:100%; height:28px; border-top:1px solid #ccc; padding:7px 0 0 0; text-align:right}
+#S_XAlert .content .btmDiv .S_buttonOuter{ margin:0 10px 0 0}
+#S_XAlert .content .btmDiv .S_button{ margin:0 10px 0 0;*margin:0;margin:0\0}
+
+/*----ProgressBar----*/
+.S_ProgressBar{ width:300px; height:30px; background:#fff; border:0;}
+.S_ProgressBar .PB_top,.S_ProgressBar .PB_bottom{ width:298px;height:1px; background:#417CBA; border-left:1px solid #fff; border-right:1px solid #fff}
+.S_ProgressBar .PB_middle{ width:296px; height:26px; border-left:1px solid #417CBA; border-right:1px solid #417CBA; padding:1px;}
+.S_ProgressBar .PB_Slider{ width:0; height:26px;background:url(../images/bg.png)}
+
+.S_ProgressBar .PB_Slider1,.S_ProgressBar .PB_Slider2{height:30px; position:absolute; margin:-22px 0 0 0; font-weight:bold; font-family:Tahoma;}
+.S_ProgressBar .PB_Slider1{ width:300px;z-index:2; color:#03C}
+.S_ProgressBar .PB_Slider1 div{ padding:0 0 0 140px}
+.S_ProgressBar .PB_Slider2{ width:152px;z-index:3;color:#fff;overflow:hidden}
+.S_ProgressBar .PB_Slider2 div{ padding:0 0 0 140px}
+
+/*----Calendar----*/
+.S_Calendar div{ width:24px; height:24px; background:url(../images/Plugin/calendar_bg.png); float:left; cursor:pointer; margin:0 0 0 -1px;font-size:12px;}
+.S_Calendar div.colorHover,.S_Calendar div:hover,.S_Calendar div.calHover{ background:url(../images/Plugin/calendar_bg.png) 0 -24px}
+
+#S_Calendar { width:210px; height:210px; overflow:visible;position:absolute; z-index:109; font-family:Tahoma; font-size:12px; margin:1px 0 0 0; display:none}
+
+#S_CalendarC {width:200px; height:200px; background:#EDF3F6; border:1px solid #417CBA; padding:5px;
+-moz-border-radius:2px;border-radius:2px;-moz-box-shadow:0 1px 5px #ccc;-webkit-box-shadow:0 1px 5px #ccc;box-shadow:0 1px 5px #ccc;}
+#S_CalendarC .top,#S_Calendar_year .top{ height:25px; text-align:center;border-bottom:1px solid #9CB8CC; line-height:20px;  }
+#S_CalendarC .top span{ color:#333;font-weight:bold; cursor:pointer; padding:0 5px}
+#S_CalendarC .top span:hover,#S_CalendarC .top span.hover{color:#06F}
+#S_CalendarC .top div,#S_Calendar_year .top div{ float:left}
+#S_CalendarC .top .cent,#S_Calendar_year .top .cent{ width:150px}
+#S_CalendarC .top .arrow_left,#S_CalendarC .top .arrow_right{width:25px;height:18px; cursor:pointer;}
+#S_CalendarC .top .arrow_left{ background:url(../images/Plugin/cal_arrow_left.gif)}
+#S_CalendarC .top .arrow_right{ background:url(../images/Plugin/cal_arrow_right.gif)}
+#S_CalendarC .top .arrow_hover,#S_CalendarC .top .arrow_left:hover,#S_CalendarC .top .arrow_right:hover{ background-position:0 bottom}
+
+#S_CalendarC .middle{ height:150px}
+#S_CalendarC table { width:100%}
+#S_CalendarC table thead td{ text-align:center; height:25px;font-family:微软雅黑,黑体; line-height:20px}
+#S_CalendarC table tbody td{height:20px; padding:0 0 0 5px; }
+#S_CalendarC table tbody td.day:hover,#S_CalendarC table tbody td.day_hover{ background:url(../images/Plugin/calendar_cmd_bg.png) 0 -118px;cursor:pointer}
+#S_CalendarC table tbody td.curr{ background:url(../images/Plugin/calendar_cmd_bg.png) 0 -148px}
+
+#S_CalendarC .bottom{ height:25px;border-top:1px solid #9CB8CC; padding:5px 0 0 0; text-align:center; line-height:18px}
+#S_CalendarC .bottom .time{ width:85px; float:left}
+#S_CalendarC .bottom .cmd{ width:35px; height:18px; text-align:center; line-height:18px; float:left; margin:0 0 0 2px; float:right; cursor:pointer}
+#S_CalendarC .bottom .cmd:hover,#S_CalendarC .bottom .cmd_hover{ background:url(../images/Plugin/calendar_cmd_bg.png)}
+#S_backDay{ display:none}
+
+#S_Calendar_year {display: none;position: absolute;z-index:10;width:200px; height:170px; background:#EDF3F6; margin:-207px 0 0 1px; text-align:center}
+#S_Calendar_year .top span{color:#333;font-weight:bold; cursor:default}
+#S_Calendar_year .top span:hover{ color:#333}
+#yearList{ padding:8px 0 0 0}
+#S_Calendar_year ul li{ width:42px; height:25px; line-height:25px; float:left; text-align:center; color:#666;cursor:pointer; margin:1px 3px}
+#S_Calendar_year ul li:hover,#S_Calendar_year ul li.hover{ background:url(../images/Plugin/calendar_cmd_bg.png) 0 -30px; color:#06F;}
+#S_Calendar_year ul li.curr{background:url(../images/Plugin/calendar_cmd_bg.png) 0 -30px; color:#06F;}
+#S_Calendar_month {display: none;position: absolute;z-index: 11; width:200px; height:150px; background:#EDF3F6; margin:-207px 0 0 1px; padding:25px 0 0 0}
+#S_Calendar_month ul{ padding:8px; border-top:1px solid #9CB8CC;font-family:微软雅黑,黑体; width:200px; height:auto}
+#S_Calendar_month ul li{ width:42px; height:40px; float:left; text-align:center; line-height:40px;cursor:pointer; list-style:none; margin:3px 4px 0 0}
+#S_Calendar_month ul li:hover,#S_Calendar_month ul li.hover{ background:url(../images/Plugin/calendar_cmd_bg.png) 0 -70px;  color:#06F}
+#S_Calendar_month ul li.curr{background:url(../images/Plugin/calendar_cmd_bg.png) 0 -70px;  color:#06F}
+
+/*---colorPicker---*/
+.S_colorPickerCon,.S_Calendar{ width:140px; height:24px;}
+.S_colorPickerCon input,.S_Calendar input{ width:100px; height:14px; line-height:14px; padding:4px; margin:0; float:left;border:1px solid #bbb; font-family:Arial}
+.S_colorPickerCon input.S_input_text,.S_Calendar input.S_input_text{-moz-border-radius:3px 0 0 3px;border-radius:3px 0 0 3px;}
+.S_colorPickerCon input:focus,.S_colorPickerCon input.S_focus,.S_Calendar input:focus,.S_Calendar input.S_focus{border:1px solid #7BF; margin:0; color:#000;}
+
+.S_colorPickerCon div{ width:24px; height:24px; background:url(../images/Plugin/colorPicker_bg.png); float:left; cursor:pointer; margin:0 0 0 -1px}
+.S_colorPickerCon div.colorHover,.S_colorPickerCon div:hover{ background:url(../images/Plugin/colorPicker_bg.png) 0 -24px}
+.S_colorPickerCon div.colorDown,.S_Calendar div.colorDown{ background-position:0 -48px}
+
+.S_colorPickerPanel{width:175px;height:112px;cursor:default;position:absolute; background:#fff; border:1px solid #ccc; margin:1px 0 0 0; display:none;
+-moz-border-radius:2px;border-radius:2px;-moz-box-shadow:0 1px 5px #ccc;-webkit-box-shadow:0 1px 5px #ccc;box-shadow:0 1px 5px #ccc;}
+
+.S_colorInput{width:165px;height:25px;padding:0 5px;background-color:#efefef;}
+.S_colorInput .colorShow{width:16px;height:16px;float:left;background:url(../images/Plugin/bg.gif);margin:2px 0 0 -2px;padding:2px;}
+.S_colorInput .colorShow div{width:14px;height:14px;border:1px solid #ccc; background:#fff;}
+.S_colorContent{ width:170px; height:auto; padding:1px;_padding:1px 4px;}
+
+.S_color_h_border{width:10px;height:10px;float:left;margin:2px 5px 0 2px;_margin:2px 1px 0 2px; overflow:visible}
+.S_color_h_border div{width:10px;height:10px;border:1px solid #ccc;margin:1px 0 0 1px;}
+.S_color_h_border.S_color_h_border_hover div{border:2px solid #FFD595;margin:0;_margin:0 -1px -1px 0}
+
+.S_color_list{width:10px;height:60px;float:left;margin:8px 2px 0 3px;_margin:6px 2px 0 2px;border:1px solid #ccc;overflow:visible}
+.S_color_list div{width:10px;height:12px;border:1px solid #ccc;border-top:0;border-bottom:0; margin:0 0 0 -1px; _position:relative;_margin:0 -1px 0 -1px;}
+.S_color_list div.S_color_list_hover{border:2px solid #FFD595; margin:-4px 0 0 -2px;_margin:-4px -2px 0 -2px}
+

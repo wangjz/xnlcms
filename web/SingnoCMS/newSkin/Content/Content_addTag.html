@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title></title>
+<link href="../css/Base.css" rel="stylesheet" type="text/css" />
+<link href="../css/Config.css" rel="stylesheet" type="text/css" />
+<link href="../css/plugin.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+.forms{ margin:0; border-left:10px solid #fff; border-right:10px solid #fff}
+input.X_input_text{ width:300px}
+</style>
+<script type="text/javascript">
+function toSubmit()
+{
+	var errorObj={isError:false,Msg:""};
+	var tagName=Sio.trim($i('tagname').value);
+	if(tagName=="")
+	{
+		errorObj.isError=true;
+		errorObj.Msg="tag名称不能为空!";
+	}
+	else if(tagName.indexOf(',')>=0)
+	{
+		errorObj.isError=true;
+		errorObj.Msg="tag名称不能有\",\"字符!";
+	}
+	if(errorObj.isError)
+	{
+		alert(errorObj.Msg);
+		$i('tagname').focus();
+	}
+	else
+	{
+		new Sio.Ajax("Content_addTag.aspx?action=addtag",{parameters:{ip:ip},onComplete:complete})
+	}
+	return false;
+}
+
+function complete(request)
+{
+	var obj=eval("("+request.responseText+")");
+	if(obj.state=="N")
+	{
+		alert(obj.msg);
+		$i('tagname').focus();
+	}
+	else
+	{
+		alert("添加完成！");
+		$i('tagname').value="";
+		$i('tagname').focus();
+	}
+	//if(obj.state=="Y")window.parent.closeAlert();
+}
+</script>
+</head>
+<body>
+<form action="Content_action.aspx?action=addtag"  method="post" onsubmit="toSubmit();return false;">
+<table class="forms">
+	<tbody>
+		<tr>
+			<td width="100">tag名称：</td>
+			<td><input type="text" name="tagname" id="tagname" /><span class="required">*</span></td>
+		</tr>
+	</tbody>
+	<tfoot>
+		<tr>
+			<td colspan="2"><div class="grayBg center"><input type="submit" value="添加" /></div></td>
+		</tr>
+	</tfoot>
+</table>
+</form>
+<script type="text/javascript" src="../JS/Sio.min.js"></script>
+<script type="text/javascript">
+Sio.Text();
+Sio.Button();
+</script>
+</body>
+</html>

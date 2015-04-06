@@ -1,0 +1,159 @@
+<!--#include file="test.aspx"-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>仙诺科技</title>
+<meta name="keywords" content="郑州网站建设,郑州界面设计,RIA/AIR开发,flash设计,flash游戏开发" />
+<meta name="description" content="仙诺（郑州）信息科技有限公司（Singno Information Technology Co., Ltd.）是以技术研发为主导，专业为企业提供网络服务的科技企业，致力于UI设计、RIA/AIR开发、网站开发及管理系统开发等技术领域的研究与探索。 " />
+<link href="css/base.css" rel="stylesheet" type="text/css" />
+<link href="css/index.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<div id="top">
+	<div class="left"></div>
+	<div class="center">
+		<div id="moveCon">
+			<span class="fl"><a href="/index.html"><img src="/images/logo.gif" alt="仙诺科技" border="0"/></a></span>
+			<div id="search" class="fr">
+				<input id="searchInput" type="text" class="fl" />
+				<div class="fr"><img id="searchCmd" src="/images/close.gif" alt="" /></div>
+			</div>
+			<div id="nav" class="fr">
+				<ul>
+					<li><a href="/news.html">新闻资讯</a></li>
+					<li><a href="/service.html">服务项目</a></li>
+					<li><a href="/case.html">案例分析</a></li>
+					<li><a href="/product.html">产品中心</a></li>
+					<li><a href="/support.html">技术支持</a></li>
+					<li><a href="/about.html">关于我们</a></li>
+                    
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="right"></div>
+</div>
+<div id="head">
+	<div class="pic"><img src="images/banner.jpg" alt="" /></div>
+	<ul>
+		<li><span></span></li><li><span></span></li><li><span></span></li><li><span></span></li><li><span></span></li><li><span></span></li>
+	</ul>
+</div>
+<div id="news">
+	<div class="list fl">
+		<div class="top"></div>
+		<div class="li">
+			<div class="title"><a href="/news.html">新闻资讯</a></div>
+			<ul>
+
+				<li><a href="/news/47.html">微软将出租云计算数据中心以适应创新企业需要</a></li><li><a href="/news/25.html">微软Windows 8平板电脑或将于年底推出</a></li><li><a href="/news/24.html">传新款MacBook Pro或支持Light Peak高速连接</a></li><li><a href="/news/23.html">阿里巴巴B2B公司CEO卫哲辞职 阿里称整肃价值观</a></li><li><a href="/news/22.html">雅虎继续人才流失 一年半出走15名高管</a></li><li><a href="/news/21.html">禹容公布三驾马车战略 幕后投资方首度曝光</a></li><li><a href="/news/20.html">新18号文缓解两大IT业政策旱情</a></li><li><a href="/news/19.html">百思买开始接受摩托罗拉Xoom平板电脑预定</a></li><li><a href="/news/18.html">苹果抢占全球60%触摸屏产能 竞争对手供应吃紧</a></li><li><a href="/news/17.html">CNNIC称上海网速全国最慢惹争议 运营商质疑</a></li>
+        
+			</ul>
+		</div>
+	</div>
+	<div class="list listLeft">
+		<div class="top"></div>
+		<div class="li">
+			<div class="title"><a href="/support/documents.html">技术文档</a></div>
+			<ul>
+
+				<li><a href="/support/documents/37.html">2011年网页设计发展趋势</a></li><li><a href="/support/documents/36.html">网页设计很糟糕的10个原因 </a></li><li><a href="/support/documents/35.html">移动应用取得成功的关键 </a></li><li><a href="/support/documents/34.html">你需要熟知10个的CSS属性</a></li><li><a href="/support/documents/33.html">DIV CSS设计时IE6、IE7、FF 兼容性问题解决篇</a></li><li><a href="/support/documents/32.html">Yahoo给出的34条网站加速方法 </a></li><li><a href="/support/documents/31.html">云计算的七个最佳建议 策略和目标先行</a></li><li><a href="/support/documents/30.html">&quot;杀死&quot;你的服务器的6种方法 </a></li><li><a href="/support/documents/29.html">网站可用性测试全过程 </a></li><li><a href="/support/documents/27.html">提高Web应用程序开发的7个技巧</a></li>
+        
+			</ul>
+		</div>
+	</div>
+	<div class="list fr">
+		<div class="top"></div>
+		<div id="case" class="li">
+			<div class="title">案例展示</div>
+
+			<div class="case"><span>种果树</span><img src="/upload/case/case_flashgame/zhongguoshu.jpg" width="270" height="110" alt="" /></div>
+
+			<div class="case"><span>跳跳果冻兽</span><img src="/upload/case/case_flashgame/tiaotiaoguodongshou.jpg" width="270" height="110" alt="" /></div>
+
+			<div class="case"><span>甜甜方块</span><img src="/upload/case/case_flashgame/tiantianfangkuai.jpg" width="270" height="110" alt="" /></div>
+
+			<div class="case"><span>泡泡龙</span><img src="/upload/case/case_flashgame/paopaolong.jpg" width="270" height="110" alt="" /></div>
+
+			<div class="case"><span>滑冰</span><img src="/upload/case/case_flashgame/huabing.jpg" width="270" height="110" alt="" /></div>
+
+		</div>
+	</div>
+</div>
+<div id="service">
+	<div class="top">
+		<ul>
+			<li>界面设计</li>
+			<li>动画设计</li>
+			<li>RIA/AIR开发</li>
+			<li>网站建设</li>
+		</ul>
+	</div>
+	<div class="list">
+		<div class="item">
+			<div class="ico"><img src="images/ico_01.png" alt="" /></div>
+			<div class="txt">
+				<p>人机交互图形化用户界面设计。纵观国际相关产业在图形化用户界面设计方面的发展现状，许多国际知名公司早己意识到UI在产品方面产生的强大增值功能，以及带动的巨大市场价值，随着中国IT产业的迅猛发展.....</p>
+				<a href="/service/4.html">详细信息</a>
+			</div>
+		</div>
+		<div class="item">
+			<div class="ico"><img src="images/ico_02.png" alt="" /></div>
+			<div class="txt">
+				<p>Flash技术的实现对业界来讲是一次飞跃，现已涵盖至各行各业，它借鉴了大量的非线性编辑的设计手段，大胆的运用大量的电影因素，不但动感十足，音效震撼，还具备强大的交互性，在表达力上大大超越了传统的表现媒体 ...</p>
+				<a href="/service/7.html">详细信息</a>
+			</div>
+		</div>
+		<div class="item">
+			<div class="ico"><img src="images/ico_03.png" alt="" /></div>
+			<div class="txt">
+				<p>RIA 具有的桌面应用程序的特点包括：在消息确认和格式编排方面提供互动用户界面；在无刷新页面之下提供快捷的界面响应时间；提供通用的用户界面特性如拖放式（drag and drop）以及在线和离线操作能力…</p>
+				<a href="/service/6.html">详细信息</a>
+			</div>
+		</div>
+		<div class="webs">
+			<ul>
+				<li>
+					<div class="pic"><img src="images/icon_01.gif" alt="" /></div>
+					<div class="txt"><a href="#">企业标准型</a><br /><span>Standard Site</span></div>
+				</li>
+				<li>
+					<div class="pic"><img src="images/icon_02.gif" alt="" /></div>
+					<div class="txt"><a href="#">企业增强型</a><br /><span>Enhanced Site</span></div>
+				</li>
+				<li>
+					<div class="pic"><img src="images/icon_03.gif" alt="" /></div>
+					<div class="txt"><a href="#">企业智能型</a><br /><span>Smart Site</span></div>
+				</li>
+				<li>
+					<div class="pic"><img src="images/icon_04.gif" alt="" /></div>
+					<div class="txt"><a href="#">多功能品牌塑造型</a><br /><span>Multifunction Site</span></div>
+				</li>
+				<li>
+					<div class="pic"><img src="images/icon_05.gif" alt="" /></div>
+					<div class="txt"><a href="#">门户型</a><br /><span>Portal Site</span></div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="bottom"></div>
+</div>
+<div id="copyright">
+	<script language="javascript" type="text/javascript" src="http://js.users.51.la/4495480.js"></script>
+<noscript><a href="http://www.51.la/?4495480" target="_blank"><img alt="&#x6211;&#x8981;&#x5566;&#x514D;&#x8D39;&#x7EDF;&#x8BA1;" src="http://img.users.51.la/4495480.asp" style="border:none" /></a></noscript>  <a href="#">关于我们</a> | <a href="#">网站建设套餐</a> | <a href="#">优化推广</a> | <a href="#">主机域名</a> | <a href="#">改版维护</a> | <a href="#">定制服务</a> | <a href="#">联系我们</a><br />
+	copyright 2009-2010 Singno.com All Rights Reserved <a href="mailto:webmaster@Singno.com">webmaster@Singno.com</a> 豫ICP备09021950号
+</div>
+<script type="text/javascript" src="js/Sio.base_11.02.min.js"></script>
+<script type="text/javascript" src="js/nav.js"></script>
+<script type="text/javascript">
+var caseLi = Sio.get('#case div.case');
+caseLi[0].className = 'case case_curr';
+Sio.addEvent(caseLi,'mouseover',function(e){
+	Sio.removeClass(caseLi,'case_curr');
+	e.className = 'case case_curr';
+});
+</script>
+</body>
+</html>

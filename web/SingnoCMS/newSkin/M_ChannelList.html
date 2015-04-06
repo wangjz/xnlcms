@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<meta http-equiv="x-ua-compatible" content="ie=7" />
+<title></title>
+<link href="Css/Base.css" rel="stylesheet" type="text/css" />
+<link href="css/plugin.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+.S_tree_list{ border:0; margin:10px 0 0 0}
+</style>
+</head>
+<body>
+<script type="text/javascript" src="JS/Sio.min.js"></script>
+<script type="text/javascript" src="inc/classDate.aspx"></script>
+<script type="text/javascript">
+//构建栏目列表
+var url=document.URL;
+url=url.split("?")[1].replace("url=","");
+url=url.replace(".aspx&",".aspx?");
+new Sio.Tree({id:'Class',width:150,data:classDate,fn:function(e){
+	//控制目标框架的跳转
+	var toUrl=url+"?nodeid="+e;
+	if(url.indexOf('?')>=0)toUrl=url+"&nodeid="+e;
+	parent.document.getElementById('manageMain').src = toUrl;
+}});
+</script>
+</body>
+</html> 

@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>欢迎使用Singno CMS</title>
+<link href="css/Base.css" rel="stylesheet" type="text/css" />
+<link href="css/plugin.css" rel="stylesheet" type="text/css" />
+<link href="css/login.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<form action="inc/inc_login.aspx" method="post" name="form1" onsubmit="testLogin();return false;">
+<div id="box">
+	<div class="title"><img src="Images/title_login.gif" alt="" /></div>
+    <table class="forms" cellpadding="0" cellspacing="0">
+    	<tbody>
+    		<tr>
+    			<td align="right">用户名：</td>
+    			<td colspan="3"><input type="text" name="LoginName" id="LoginName" /></td>
+    		</tr>
+    		<tr>
+    			<td align="right">密码：</td>
+    			<td colspan="3"><input type="password" name="PassWord" id="PassWord" /></td>
+    		</tr>
+    		<tr>
+    			<td width="30%" align="right">验证码：</td>
+    			<td width="17%"><input name="VerifyCode" type="text" id="VerifyCode" style="width:60px" size="4" maxlength="6" /></td>
+				<td width="22%"><div id="VerifyCodeDiv"><a href="javascript:refreshCode()"><img src='../Common/VerifyCode.ashx'  title="看不清楚?单击更换" /></a></div></td>
+				<td width="31%" class="button"><input name="提交" type="submit" value="登录" /></td>
+    		</tr>
+    	</tbody>
+		<tfoot>
+			<tr>
+				<td colspan="4">Copyright 2010 Singno V1.0-beta</td>
+			</tr>
+		</tfoot>
+    </table>
+</div>
+</form>
+<script type="text/javascript" src="JS/Sio.min.js"></script>
+<script type="text/javascript" src="JS/big_button.js"></script>
+<script type="text/javascript">
+Sio.Text();
+
+function testLogin()
+{
+	var loginName=$i('LoginName').value;
+	if(loginName=="")
+	{
+		alert("用户名不能为空!");
+		return;
+	}
+	var passWord=$i('PassWord').value;
+	if(passWord=="")
+	{
+		alert("密码不能为空!");
+		return;
+	}
+	var VerifyCode=$i('VerifyCode').value;
+	if(VerifyCode=="")
+	{
+		alert("请输入验证码。");
+		return;
+	}
+	Sio.ajax({url:'inc/inc_login.aspx',method:'post',complete:complete,data:{LoginName:loginName,PassWord:passWord,VerifyCode:VerifyCode}});
+	//new Sio.Ajax("inc/inc_login.aspx",{parameters:{LoginName:loginName,PassWord:passWord,VerifyCode:VerifyCode},onComplete:complete});
+}
+
+function complete(response)
+{
+	var obj=eval("("+response+")");
+	if(obj.state=="Y")
+	{
+		location.href="init.aspx";
+	}
+	else if(obj.state=="N")
+	{
+		alert(obj.message);
+		refreshCode();
+	}
+}
+
+function refreshCode()
+{
+	$i("VerifyCodeDiv").innerHTML="";
+	$i("VerifyCodeDiv").innerHTML="<a href=\"javascript:refreshCode()\"><img src='../Common/VerifyCode.ashx?r="+Math.random()+"'  title=\"看不清楚?单击更换\" /></a>";
+}
+</script>
+</body>
+</html>

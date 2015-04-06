@@ -1,0 +1,26 @@
+
+html {overflow-x:hidden;_overflow-y:auto; }
+
+input.X_input_text{ width:200px}
+
+#extName{ margin:2px 10px 0 0;}
+#myExtName{ width:98px}
+
+/*-------*/
+#matchTemp{ padding:10px 0}
+#matchTemp select,#matchTemp .buttonOuter{ margin:0 5px}
+
+/*----manageCustomCreate-----*/
+#classList { width:100%}
+#classList ul{ border-top:1px solid #eee;line-height:30px;}
+#classList li{ height:30px;  border-bottom:1px solid #eee; margin:-1px 0 0 0; padding:0 10px}
+#classList li:hover{ background:#f2f2f2}
+#classList li.hover{ background:#f2f2f2; border:0; border-bottom:1px solid #eee}
+
+#ctrl_cmd a{ color:#03C}
+#ctrl_cmd a:hover{ color:#f00}
+
+/*-----------*/
+#ruelInput{ width:400px}
+
+

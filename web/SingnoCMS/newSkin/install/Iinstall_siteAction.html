@@ -1,0 +1,28 @@
+﻿<xnl:if>
+<ifItem value="{&action}" test="add">
+<if>
+<CMS.Manage:Site action="checksite" parentSiteID="{%upSite}" siteName="{%siteName}">
+<Site.Success>
+添加站点
+	<CMS.Manage:Site action="{&action}" parentSiteID="{%upSite}" dirName="{%dirName}" siteName="{%siteName}" isroot="{%isroot}"  Charset="{%Charset}" modelId="{%modelId}" checkLevelNum="{%checkLevel}" checkLevel="{%audit}">
+		<Site.Success>
+		成功
+		</Site.Success>
+		<Site.Error>
+		有错误:
+		<Site.Error.Item>
+		<li>{@Site.Error.Msg}</li>
+		</Site.Error.Item>
+		</Site.Error>
+		</CMS.Manage:Site>
+</Site.Success>
+		<Site.Error>
+		有错误:
+		<Site.Error.Item>
+		<li>{@Site.Error.Msg}</li>
+		</Site.Error.Item>
+		</Site.Error>
+</CMS.Manage:Site>
+</if>
+</ifItem>
+</xnl:if>

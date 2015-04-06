@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3C49CC79-3DD8-4458-BEB0-FBBA3E0F5FDA}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>COM.SingNo.XNLLib.CMS.Manage</RootNamespace>
+    <AssemblyName>COM.SingNo.XNLLib.CMS.Manage</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>singno.snk</AssemblyOriginatorKeyFile>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="COM.SingNo.XNLLib.CMS.Manage.Common.cs" />
+    <Compile Include="COM.SingNo.XNLLib.CMS.Manage.ManageUtil.cs" />
+    <Compile Include="COM.SingNo.XNLLib.CMS.Manage.TemplateAction.cs" />
+    <Compile Include="COM.SingNo.XNLLib.CMS.Manage.Channels.cs" />
+    <Compile Include="COM.SingNo.XNLLib.CMS.Manage.Init.cs" />
+    <Compile Include="COM.SingNo.XNLLib.CMS.Manage.Channel.cs" />
+    <Compile Include="COM.SingNo.XNLLib.CMS.Manage.Content.cs" />
+    <Compile Include="COM.SingNo.XNLLib.CMS.Manage.Model.cs" />
+    <Compile Include="COM.SingNo.XNLLib.CMS.Manage.Site.cs" />
+    <Compile Include="COM.SingNo.XNLLib.CMS.Manage.CreatePage.cs">
+    </Compile>
+    <Compile Include="COM.SingNo.XNLLib.CMS.Manage.PageContentList.cs" />
+    <Compile Include="ParseAndCreat.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="COM.SingNo.XNLLib.CMS.Manage.ContentForm.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\COM.SingNo.CMS.Core\COM.SingNo.CMS.Core.csproj">
+      <Project>{52ACB41E-0A78-4DAB-82B9-FF97033C4385}</Project>
+      <Name>COM.SingNo.CMS.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\COM.Singno.Common\COM.SingNo.Common.csproj">
+      <Project>{1CDF3063-BD83-4630-AC1E-4F8D131063ED}</Project>
+      <Name>COM.SingNo.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\DAL\COM.SingNo.DAL.csproj">
+      <Project>{66B7865E-95BF-4617-83AF-256AD517B43A}</Project>
+      <Name>COM.SingNo.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\web\COM.SingNo.CMS.Web.csproj">
+      <Project>{167305B3-93E0-4DBB-90E2-AB7B7129011A}</Project>
+      <Name>COM.SingNo.CMS.Web</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="singno.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="COM.SingNo.XNLLib.CMS.Manage.AdminLogin.cs" />
+    <Compile Include="COM.SingNo.XNLLib.CMS.Manage.AdminLoginCheck.cs" />
+    <Compile Include="COM.SingNo.XNLLib.CMS.Manage.Rights.cs" />
+    <Compile Include="COM.SingNo.XNLLib.CMS.Manage.AdminUser.cs" />
+    <Compile Include="COM.SingNo.XNLLib.CMS.Manage.MSystemConfig.cs" />
+    <Compile Include="COM.SingNo.XNLLib.CMS.Manage.SiteConfig.cs" />
+    <Compile Include="COM.SingNo.XNLLib.CMS.Manage.ChannelConfig.cs" />
+    <Compile Include="UserTag.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

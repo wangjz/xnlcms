@@ -1,0 +1,1 @@
+<xnl.mytag:头部></xnl.mytag:头部>{[channel.path]}

@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>仙诺科技-你需要熟知10个的CSS属性</title>
+<meta name="keywords" content="郑州网站建设,郑州界面设计,郑州RIA/AIR开发,郑州flash设计,郑州flash游戏开发，郑州软件开发，郑州软件设计，郑州flash动画" />
+<meta name="description" content="仙诺（郑州）信息科技有限公司（Singno Information Technology Co., Ltd.）是以技术研发为主导，专业为企业提供网络服务的科技企业，致力于UI设计、RIA/AIR开发、网站开发及管理系统开发等技术领域的研究与探索。 " />
+<link href="/css/base.css" rel="stylesheet" type="text/css" />
+<link href="/css/list.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<div id="top">
+	<div class="left"></div>
+	<div class="center">
+		<div id="moveCon">
+			<span class="fl"><a href="/index.html"><img src="/images/logo.gif" alt="仙诺科技" border="0"/></a></span>
+			<div id="search" class="fr">
+				<input id="searchInput" type="text" class="fl" />
+				<div class="fr"><img id="searchCmd" src="/images/close.gif" alt="" /></div>
+			</div>
+			<div id="nav" class="fr">
+				<ul>
+					<li><a href="/news.html">新闻资讯</a></li>
+					<li><a href="/service.html">服务项目</a></li>
+					<li><a href="/case.html">案例分析</a></li>
+					<li><a href="/product.html">产品中心</a></li>
+					<li><a href="/support.html">技术支持</a></li>
+					<li><a href="/about.html">关于我们</a></li>
+                    
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="right"></div>
+</div>
+<div id="banner"><img src="/images/banner1.jpg" alt="" /></div>
+<div id="content">
+<div class="fl">
+<div class="title">你需要熟知10个的CSS属性</div>
+		<P><STRONG>1.css字体简写规则</STRONG><BR>当使用css定义字体时你可能会这样做：<BR>font-size:1em;<BR>line-height:1.5em;<BR>font-weight:bold;<BR>font-style:italic;<BR>font-variant:small-caps;<BR>font-family:verdana,serif;<BR>事实上你可以简写这些属性：<BR>font: 1em/1.5em　bold　italic　small-caps　verdana,serif<BR>现在好多了吧，不过有一点要注意：使用这一简写方式你至少要指定font-size和font-family属性，其他的属性（如font-weight, font-style,font-varient）如未指定将自动使用默认值。</P>
+<P><SPAN id=more-415></SPAN></P>
+<P><STRONG>2.同时使用两个class</STRONG><BR>通常我们只为属性指定一个class,但这并不等于你只能指定一个，实际上，你想指定多少就可以指定多少，例如：&lt;p class="text side"&gt;...&lt;/p&gt;。通过同时使用两个class（使用空格而不是逗号分割）,这个段落将同时应用两个class中制定的规则。如果两者中有任何规则重叠，那么后一个将获得实际的优先应用。</P>
+<P><STRONG>3.css中边框（border)的默认值</STRONG><BR>当编写一条边框的规则时，你通常会指定颜色、宽度以及样式（任何顺序均可）。例如：border:　3px　solid　#000（3像素宽的黑色实线边框），其实这个例子中唯一需要指定的值只是样式。假如你指定样式为实线（solid),那么其余的值将使用默认值：默认的宽度为中等（相当于3到4像素）；默认的颜色为边框里的文字颜色。如果这正是你想要的效果，你完全可以不在css里指定。</P>
+<P><STRONG>4.!important会被IE忽略</STRONG><BR>在css中，通常最后指定的规则会获得优先权。然而对除了IE以外的浏览器来说，任何后面标有!important的语句将获得绝对的优先权，例如：margin-top:3.5em　!important;margin-top:2em。除IE以外所有浏览器中的顶部边界都是3.5em，而IE为2em，有时候这一点很有用，尤其在使用相对边界值时（就像这个例子），可以显示出IE与其他浏览器的细微差别。（很多人可能还注意到了css的子选择器也是会被IE忽略的）</P>
+<P><STRONG>5.图片替换的技巧</STRONG><BR>使用标准的html而不是图片来显示文字通常更为明智，除了加快下载还可以获得更好的可用性。但是如果你决心使用访问者的机器中可能没有的字体时，你只能选择图片。<BR>举例来说，你想在每一页的顶部使用“Buy widgets”的标题，但你同时又希望这是能被搜索引擎发现的，为了美观你使用了少见的字体那么你就得用图片来显示了：<BR>&lt;h1&gt;&lt;img　src="widget-image.gif"　alt="Buy widgets"/&gt;&lt;/h1&gt;<BR>这样当然没错，但是有证据显示搜索引擎对真实文本的重视远超过alt文本（因为已经有太多网站使用alt文本充当关键字），因此，我们得用另一种方法：&lt;h1&gt;&lt;span&gt;Buy　widgets&lt;/span&gt;&lt;/h1&gt; ，那你的漂亮字体怎么办呢？下面的css可以帮上忙：<BR>h1 {background: url(widget-image.gif)　no-repeat;}<BR>h1 span {position:absolute;left:-2000px;}<BR>现在你既用上了漂亮的图片又很好的隐藏了真实文本--借助css，文本被定位于屏幕左侧-2000像素处。</P>
+<P><STRONG>6.css盒模型hack的另一选择</STRONG><BR>css盒模型hack被用来解决IE6之前的浏览器显示问题，IE6.0之前的版本会把某元素的边框值和填充值包含在宽度之内（而不是加在宽度值上）。例如，你可能会使用以下css来指定某个容器的尺寸：<BR>#box<BR>{<BR>width:100px;<BR>border:5px;<BR>padding:20px;<BR>}<BR>然后在html中应用：&lt;div　id="box"&gt;...&lt;/div&gt;<BR>盒的总宽度在几乎所有浏览器中为150像素（100像素宽度+两条5像素的边框+两个20像素的填充），唯独在IE6之前版本的浏览器中仍然为100像素（边框值和填充值包含在宽度值中），盒模型的hack正是为了解决这一问题，但是也会带来麻烦。更简单的办法如下：<BR>css:<BR>#box<BR>{<BR>width:150px;<BR>}</P>
+<P>#box　div{<BR>border:5px;<BR>padding:20px;<BR>}<BR>html:<BR>&lt;div id="box"&gt;&lt;div&gt;...&lt;/div&gt;&lt;/div&gt;<BR>这样一来在任何浏览器中盒的总宽度都将是150像素。</P>
+<P><STRONG>7.将块元素居中<BR></STRONG>假设你的网站使用了固定宽度的布局，所有的内容置于屏幕中央，可以使用以下的css：<BR>#content<BR>{<BR>width:700px;<BR>margin:0　auto;<BR>}<BR>你可以把html的body之内任何项目置于&lt;div　id="content"&gt;&lt;/div&gt;中，该项目将自动获得相等的左右边界值从而保证了居中显示。不过，这在IE6之前版本的浏览器中仍然有问题，将不会居中，因此必须修改如下：<BR>body<BR>{<BR>text-align:center;<BR>}</P>
+<P>#content<BR>{<BR>text-align:left;<BR>width:700px;<BR>margin:　0　auto;<BR>}<BR>对body的设定将导致主体内容居中，但是连所有的文字也居中了，这恐怕不是你想要的效果，为此#content的div还要指定一个值：text-align:left</P>
+<P><STRONG>8.使用css实现垂直居中</STRONG><BR>垂直居中对表格来说是小菜一碟，只需指定单元格为vertical-align:middle即可，但这在css布局中不管用。假设你将一个导航菜单的高度设为2em，然后在css中指定垂直对齐的规则，文字还是会被排到盒的顶部，根本没有什么区别。要解决这一问题，只需将盒的行高设为与盒的高度相同即可，以这个例子来说，盒高2em,那么只需在css中再加入一条：line-height: 2em 就可实现垂直居中了！</P>
+<P><STRONG>9. 容器内的css定位</STRONG><BR>css的最大优点之一就是可以将对象定位在文档的任何位置，同样的也可以将对象在某容器内进行定位。只需要为该容器添加一条css规则：<BR>#container<BR>{<BR>position:relative;<BR>}<BR>则容器内的任何元素的定位都是相对于该容器的。假定你使用以下html结构：<BR>&lt;div　id="container"&gt;&lt;div　id="navigation"&gt;...&lt;/div&gt;&lt;/div&gt;<BR>如果想将navigation定位在容器内离左边界30像素，离顶部5像素，可以使用以下css语句：<BR>#navigation<BR>{<BR>position:absolute;<BR>left:30px;<BR>top:5px;<BR>}</P>
+<P><STRONG>10.延伸至屏幕底部的背景色<BR></STRONG>css的缺点之一是缺乏垂直方向的控制，从而导致了一个表格布局不会遇到的问题。假设你在页面的左侧设定了一列用于放置网站的导航。页面为白色背景，但你希望导航所在的列为蓝色背景，使用以下css即可：<BR>#navigation<BR>{<BR>background:blue;<BR>width:150px;<BR>}<BR>问题在于导航项不会一直延伸到页面的底部，自然它的背景色也不会延伸到底部。于是左列的蓝色背景在页面上被半路截断，浪费了你的一番设计。怎么办呢？很不幸我们现在只能用欺骗的办法，即将body的背景指定为与左列同颜色同宽度的图片，css如下：<BR>body<BR>{<BR>background:url(blue-image.gif)　0　0　repeat-y;<BR>}<BR>背景图应为宽150像素的蓝色图片。这一办法的缺点是没法使用em来指定左列的宽度，当用户改变文字的大小导致内容的宽度扩张时，背景色的宽度不会随之改变。<BR>到写这篇文章为止这是对这类问题的唯一解决办法，因此你只能为左列使用像素值来获得能够自动延伸的不同的背景色。</P>
+	</div>
+	<div class="fr">
+		<ul>
+			<li><a href="#">关于我们</a></li>
+			<li><a href="#">关于我们</a></li>
+			<li><a href="#">关于我们</a></li>
+			<li><a href="#">关于我们</a></li>
+			<li class="txt">电话：0371-67182780</li>
+			<li>传真：0371-67182780</li>
+			<li>Email：webmatser@Singno.com</li>
+		</ul>
+	</div>
+</div>
+<div id="copyright">
+	<a href="#">关于我们</a> | <a href="#">网站建设套餐</a> | <a href="#">优化推广</a> | <a href="#">主机域名</a> | <a href="#">改版维护</a> | <a href="#">定制服务</a> | <a href="#">联系我们</a><br />
+	copyright 2009-2010 Singno.com All Rights Reserved <a href="mailto:webmaster@Singno.com">webmaster@Singno.com</a> 豫ICP备09021950号
+</div>
+<script type="text/javascript" src="/js/Sio.base_11.02.min.js"></script>
+<script type="text/javascript" src="/js/nav.js"></script>
+</body>
+</html>

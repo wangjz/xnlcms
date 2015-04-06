@@ -1,0 +1,16 @@
+
+
+body{ background:#4990D9; cursor:default}
+#box{ width:465px; height:277px;  background:url(../Images/login_bg.gif); position:absolute; left:50%; top:50%; margin-left:-233px; margin-top:-138px;}
+#box .title{ height:95px; background:url(../Images/logo_login.gif) no-repeat 40px 15px}
+#box .title img{ margin:40px 0 0 120px}
+
+.forms{ width:450px; margin:0 auto}
+.forms .S_input_text{ width:250px}
+.forms tbody tr td { border:0; padding:8px 10px 8px 0}
+.forms tfoot td{ font-size:10px; color:#666; font-family:Tahoma, Geneva, sans-serif; padding:20px 0 0 0}
+
+/*---Button---*/
+.button input{ width:86px; height:29px; background:url(../Images/button_bg.gif); margin:0; padding:0; text-align:center; line-height:29px; border:0; float:left}
+.button input.Button_hover{ background-position:0 -29px}
+.button input.Button_down{ background-position:0 -58px}

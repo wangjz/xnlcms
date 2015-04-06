@@ -1,0 +1,14 @@
+
+html {overflow-x:hidden;_overflow-y:auto; }
+
+input.X_input_text{ width:300px}
+
+/*---------manageComments--------*/
+#classList{ width:149px; height:100%; float:left; border-right:1px solid #eee}
+#classList .xtree_list{ border:0; margin:5px 0}
+#manageInfo{ width:500px; height:100%; float:left}
+#manageInfo iframe{ width:100%}
+
+
+
+

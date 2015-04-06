@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<link href="../css/Base.css" rel="stylesheet" type="text/css" />
+<link href="../css/TemplateLabel.css" rel="stylesheet" type="text/css" />
+<link href="../css/plugin.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+body{ padding:0 10px}
+</style>
+</head>
+<body>
+<table class="forms">
+	<tbody id="ctrl_cmd">
+		<tr>
+			<td>规则：</td>
+			<td><a href="#">[#ChannelID]</a></td>
+			<td><a href="#">[#Year]</a></td>
+			<td><a href="#">[#Month]</a></td>
+			<td><a href="#">[#Day]</a></td>
+			<td><a href="#">[#Hour]</a></td>
+			<td><a href="#">[#Minute]</a></td>
+			<td><a href="#">[#Second]</a></td>
+		</tr>
+		<tr>
+			<td>含义：</td>
+			<td>栏目ID</td>
+			<td>年份</td>
+			<td>月份</td>
+			<td>日期</td>
+			<td>小时</td>
+			<td>分钟</td>
+			<td>秒</td>
+		</tr>
+		<tr>
+			<td>页面命名规则：</td>
+			<td colspan="7"><input name="ruelInput" type="text" id="ruelInput" value="" size="80" onmousedown="updata()" onmouseup="updata()" onkeydown="updata()" onkeyup="updata()" /></td>
+		</tr>
+	</tbody>
+</table>
+
+<script type="text/javascript" src="../JS/Sio.min.js"></script>
+<script type="text/javascript" src="../JS/inputInsertor.js"></script>
+<script type="text/javascript">
+Sio.Text();
+Sio.Button();
+
+var $ruelInput = $i('ruelInput'),
+	SioReturnValue,
+	$a = $it('ctrl_cmd','a');
+	
+//初始化文本框	
+$ruelInput.value = window.dialogArguments || '';
+updata();
+
+//插入
+Sio.Event.add($a,'click',function(e){
+	getTextPos($ruelInput,e.innerHTML);
+	updata();
+});
+
+function updata(){
+	SioReturnValue = $ruelInput.value;
+}
+
+if(Sio.BS.IE6) Sio.Style.hoverClass($i('ctrl_cmd').children,'hover');
+</script>
+</body>
+</html>

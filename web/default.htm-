@@ -1,0 +1,9 @@
+﻿<html>
+<body>
+<a href="/singnocms/manage/init.aspx">管理</a>
+<a href="/singnocms/manage/parse.aspx?＿nodeid=14&＿extname=.html&＿style=0&＿templatePath=@/Template/Default/T_系统首页模板.ascx&＿charset=utf-8&＿path=@/tt/index&＿debug=false">生成文件</a>
+
+<a href="/singnocms/manage/parse.aspx?＿nodeid=14&＿extname=.html&＿style=0&＿templatePath=@/Template/Default/T_系统首页模板.ascx&＿charset=utf-8&＿path=@/tt/index&＿debug=true">生成文件测试</a>
+<a href="/singnocms/manage/TemplateLabel/M_Template_addProject.aspx">添加模板方案</a>
+</body>
+</html>

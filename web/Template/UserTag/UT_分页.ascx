@@ -1,0 +1,2 @@
+<div><xnl:page name="page"><currentPageTemplete>{@curpagenum}</currentPageTemplete><pageListTemplete><a href="{@pagelink}">{@pageNum}</a></pageListTemplete>
+<pageSeparatorTemplete>|</pageSeparatorTemplete></xnl:page></div>

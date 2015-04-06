@@ -1,0 +1,82 @@
+
+body{ background:#4990D9; cursor:default}
+
+#head{ width:912px; height:80px;; margin:10px auto auto auto}
+
+#main{ width:912px; height:auto; margin:auto}
+#main .title{ width:912px; height:37px}
+#main .title .left,#main .title .center,#main .title .right{ height:37px; background:url(../Images/title_bg.png) repeat-x; float:left}
+#main .title .left{ width:10px;}
+#main .title .center{ width:892px; background-position:0 -37px}
+#main .title .center li{ width:127px; height:auto; float:left; line-height:40px;; text-align:center; color:#fff;  font-weight:bold}
+#main .title .center li.curr{ color:#069}
+#main .title .right{ width:10px; background-position:-10px 0}
+#main .list{ width:904px; height:auto; background:url(Images/shadow_bg.gif) repeat-y; padding:0 4px}
+#main .list .line{ width:100%; height:6px;border-bottom:1px solid #417CBA;background:url(Images/title_bg.png) 0 -74px;}
+#line{ height:6px;background:url(../Images/title_bg.png) 0 -80px;}
+#line.a1{ width:130px}
+#line.a2{ width:260px}
+#line.a3{ width:390px}
+#line.a4{ width:520px}
+#line.a5{ width:640px}
+#line.a6{ width:780px}
+#line.a7{ width:100%}
+
+#content{ padding:0 0 15px 0}
+#content .contains{ margin:20px auto; line-height:180%; color:#fff}
+#content .button{ text-align:center; padding:10px 0; margin:0 10px}
+
+/*---input----*/
+.X_input_text { width:200px; border:1px solid #fff; height:14px;padding:4px;font-size:12px;line-height:14px;color:#333; background:url(../Images/Plugin/input_bg.png) repeat-x}
+textarea.X_input_text { height:auto; overflow:auto}
+.X_input_text:hover{ border:1px solid #95CAFF;}
+.X_input_text.hover{ border:1px solid #95CAFF;}
+.X_input_text.focus{ border:1px solid #06F; color:#000;background:url(../Images/Plugin/focus_bg.png) #fff 0 -10px repeat-x;}
+
+/*---版权设置---*/
+#copyright { width:660px; height:360px; overflow:auto; padding:20px;border:1px solid #8DC9FF;}
+/*---环境检测---*/
+#checkClient{ width:700px}
+#checkClient table{width:100%; border-collapse:collapse;}
+#checkClient table thead tr td{ font-weight:bold}
+#checkClient table td{ border:1px solid #8DC9FF; text-align:center; padding:2px 0}
+/*---站点配置---*/
+#site{ width:700px; border:1px solid #8DC9FF}
+#site table{ border:0; color:#fff; margin:10px; width:680px}
+#site table tr td{ border-top:1px solid #8DC9FF;border-bottom:1px solid #8DC9FF;  padding:5px 10px}
+
+#checkLevel{ margin:0 0 0 10px}
+/*---数据库配置---*/
+#dataBase{ width:700px; border:1px solid #8DC9FF}
+#dataBase table{ border:0; color:#fff; margin:10px; width:680px}
+#dataBase table tr td{ border-top:1px solid #8DC9FF;border-bottom:1px solid #8DC9FF;  padding:5px 10px}
+/*---帐号配置---*/
+#manager{ width:700px; border:1px solid #8DC9FF}
+#manager table{ border:0; color:#fff; margin:10px; width:680px}
+#manager table tr td{ border-top:1px solid #8DC9FF;border-bottom:1px solid #8DC9FF;  padding:5px 10px}
+/*---安装进度---*/
+#progress{width:660px; height:360px; border:1px solid #8DC9FF; padding:20px}
+
+/*---完成---*/
+#complate{ height:380px; text-align:center; border:0; padding:20px 0 0 0}
+#complate span{ font-size:30px; color:#D2FF00}
+#complate img{ margin:30px 0}
+
+#bottom{ width:912px; height:4px; margin:auto}
+
+/*---Button---*/
+.button input{ width:86px; height:29px; background:url(../Images/button_bg.gif); margin:0; padding:0; text-align:center; line-height:29px; border:0;}
+.button input.Button_hover{ background-position:0 -29px}
+.button input.Button_down{ background-position:0 -58px}
+
+
+
+
+
+
+
+
+
+
+
+

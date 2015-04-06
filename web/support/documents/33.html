@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>仙诺科技-DIV CSS设计时IE6、IE7、FF 兼容性问题解决篇</title>
+<meta name="keywords" content="郑州网站建设,郑州界面设计,郑州RIA/AIR开发,郑州flash设计,郑州flash游戏开发，郑州软件开发，郑州软件设计，郑州flash动画" />
+<meta name="description" content="仙诺（郑州）信息科技有限公司（Singno Information Technology Co., Ltd.）是以技术研发为主导，专业为企业提供网络服务的科技企业，致力于UI设计、RIA/AIR开发、网站开发及管理系统开发等技术领域的研究与探索。 " />
+<link href="/css/base.css" rel="stylesheet" type="text/css" />
+<link href="/css/list.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+<div id="top">
+	<div class="left"></div>
+	<div class="center">
+		<div id="moveCon">
+			<span class="fl"><a href="/index.html"><img src="/images/logo.gif" alt="仙诺科技" border="0"/></a></span>
+			<div id="search" class="fr">
+				<input id="searchInput" type="text" class="fl" />
+				<div class="fr"><img id="searchCmd" src="/images/close.gif" alt="" /></div>
+			</div>
+			<div id="nav" class="fr">
+				<ul>
+					<li><a href="/news.html">新闻资讯</a></li>
+					<li><a href="/service.html">服务项目</a></li>
+					<li><a href="/case.html">案例分析</a></li>
+					<li><a href="/product.html">产品中心</a></li>
+					<li><a href="/support.html">技术支持</a></li>
+					<li><a href="/about.html">关于我们</a></li>
+                    
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="right"></div>
+</div>
+<div id="banner"><img src="/images/banner1.jpg" alt="" /></div>
+<div id="content">
+<div class="fl">
+<div class="title">DIV CSS设计时IE6、IE7、FF 兼容性问题解决篇</div>
+		<P>在网站设计的时候，应该注意css样式兼容不同浏览器问题，特别是对完全使用DIV CSS设计的网，就应该更注意IE6 IE7 FF对CSS样式的兼容，不然，你的网乱可能出去不想出现的效果！</P>
+<P><SPAN id=more-445></SPAN><BR>所有浏览器 通用<BR>height: 100px;<BR>IE6 专用<BR>_height: 100px;<BR>IE6 专用<BR>*height: 100px;<BR>IE7 专用<BR>*+height: 100px;<BR>IE7、FF 共用<BR>height: 100px !important;<BR>一、CSS 兼容<BR>以下两种方法几乎能解决现今所有兼容.<BR>1, !important (不是很推荐，用下面的一种感觉最安全)<BR>随着IE7对!important的支持, !important 方法现在只针对IE6的兼容.(注意写法.记得该声明位置需要提前.)<BR>代码:<BR>&lt;style&gt;<BR>#wrapper {<BR>width: 100px!important;<BR>width: 80px;<BR>}<BR>&lt;/style&gt;<BR>2, IE6/IE77对FireFox &lt;from 针对firefox ie6 ie7的css样式&gt;<BR>*+html 与 *html 是IE特有的标签, firefox 暂不支持.而*+html 又为 IE7特有标签.<BR>代码:<BR>&lt;style&gt;<BR>#wrapper { width: 120px; }<BR>*html #wrapper { width: 80px;}<BR>*+html #wrapper { width: 60px;}<BR>&lt;/style&gt;<BR>注意:<BR>*+html 对IE7的兼容必须保证HTML顶部有如下声明：<BR>代码:<BR>&lt;!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"　"<A href="http://www.w3.org/TR/html4/loose.dtd" rel=external target=_blank>http://www.w3.org/TR/html4/loose.dtd</A>"&gt;<BR>二、万能 float 闭合(非常重要!) 可以用这个解决多个div对齐时的间距不对，<BR>关于 clear float 的原理可参见 [How To Clear Floats Without Structural Markup]<BR>将以下代码加入Global CSS 中,给需要闭合的div加上 class=”clearfix” 即可,屡试不爽.<BR>代码:<BR>&lt;style&gt;<BR>.clearfix:after {<BR>content:".";<BR>display:block;<BR>height:0;<BR>clear:both;<BR>visibility:hidden;<BR>}<BR>.clearfix {<BR>display:inline-block;<BR>}<BR>.clearfix {display:block;}<BR>&lt;/style&gt;<BR>三、其他兼容技巧(相当有用)<BR>1, FF下给 div 设置 padding 后会导致 width 和 height 增加, 但IE不会.(可用!important解决)<BR>2, 居中问题.<BR>1).垂直居中.将 line-height 设置为 当前 div 相同的高度, 再通过 vetical-align: middle.( 注意内容不要换行.)<BR>2).水平居中. margin: 0 auto;(当然不是万能)<BR>3, 若需给 a 标签内内容加上 样式, 需要设置 display: block;(常见于导航标签)<BR>4, FF 和 IE 对 BOX 理解的差异导致相差 2px 的还有设为 float的div在ie下 margin加倍等问题.<BR>5, ul 标签在 FF 下面默认有 list-style. 和 padding . 最好事先声明, 以避免不必要的麻烦. (常见于导航标签和内容列表)<BR>6, 作为外部 wrapper 的 div 不要定死高度, 最好还加上 overflow: hidden.以达到高度自适应.<BR>7, 关于手形光标. cursor: pointer. 而hand 只适用于 IE.贴上代码:<BR>兼容代码:兼容最推荐的模式。<BR>.submitbutton {<BR>float:left;<BR>width: 40px;<BR>height: 57px;<BR>margin-top: 24px;<BR>margin-right: 12px;<BR>}<BR>*html .submitbutton {<BR>margin-top: 21px;<BR>}<BR>*+html .submitbutton {<BR>margin-top: 21px;<BR>}<BR>什么是浏览器兼容：当我们使用不同的浏览器（Firefox IE7 IE6）访问同一个网站，或者页面的时候，会出现一些不兼容的问题，有的显示出来正常，有的显示出来不正常，我们在编写CSS的时候会很恼火，刚修复了这个浏览器的问题，结果另外一个浏览器却出了新问题。而兼容就是一种办法，能让你在一个CSS里面独立的写支持不同浏览器的样式。这下就和谐了。呵呵！<BR>最近微软发布的IE7浏览器的兼容性确实给一些网页制作人员添加了一个沉重的负担，虽然IE7已经走向标准化，但还是有许多和FF不同的地方，所以需要用到IE7的兼容，有许多朋友问过IE7的兼容是什么，其实我也不知道。暂时还没找到IE7专用的兼容。除了前面那片文章，《针对firefox ie6 ie7的css样式》中的兼容方式也是很好用的。<BR>有一点逻辑思想的人都会知道可以用IE和FF的兼容结合起来使用，下面介绍三个兼容，例如：（适合新手，呵呵，高手就在这里路过吧。）<BR>程序代码<BR>第一个兼容，IE FF 所有浏览器公用（其实也不算是兼容）<BR>height:100px;<BR>第二个兼容 IE6专用<BR>_height:100px;<BR>第三个兼容 IE6 IE7公用<BR>*height:100px;<BR>介绍完了这三个兼容了，下面我们再来看看如何在一个样式里分别给一个属性定义IE6 IE7 FF专用的兼容，看下面的代码，顺序不能错哦：<BR>程序代码<BR>height:100px;<BR>*height:120px;<BR>_height:150px;<BR>下面我简单解释一下各浏览器怎样理解这三个属性：<BR>在FF下，第2、3个属性FF不认识，所以它读的是 height:100px;<BR>在IE7下，第三个属性IE7不认识，所以它读第1、2个属性，又因为第二个属性覆盖了第一个属性，所以IE7最终读出的是第2个属性 *height:120px;<BR>在IE6下，三个属性IE6都认识，所以三个属性都可以读取，又因为第三个属性覆盖掉前2个属性，所以IE6最终读取的是第三个属性。<BR>1 针对firefox ie6 ie7的css样式<BR>现在大部分都是用!important来兼容，对于ie6和firefox测试可以正常显示，但是ie7对!important可以正确解释，会导致页面没按要求显示！找到一个针对IE7不错的兼容方式就是使用“*+html”，现在用IE7浏览一下，应该没有问题了现在写一个CSS可以这样：<BR>#1 { color: #333; }<BR>* html #1 { color: #666; }<BR>*+html #1 { color: #999; }<BR>那么在firefox下字体颜色显示为#333，IE6下字体颜色显示为#666，IE7下字体颜色显示为#999。<BR>2 css布局中的居中问题<BR>主要的样式定义如下：<BR>body {TEXT-ALIGN: center;}<BR>#center { MARGIN-RIGHT: auto; MARGIN-LEFT: auto; }<BR>说明：<BR>首先在父级元素定义TEXT-ALIGN: center;这个的意思就是在父级元素内的内容居中；对于IE这样设定就已经可以了。<BR>但在mozilla中不能居中。解决办法就是在子元素定义时候设定时再加上“MARGIN-RIGHT: auto;MARGIN-LEFT: auto; ”<BR>需要说明的是，如果你想用这个方法使整个页面要居中，建议不要套在一个DIV里，你可以依次拆出多个div，只要在每个拆出的div里定义MARGIN-RIGHT: auto;MARGIN-LEFT: auto; 就可以了。<BR>3 盒模型不同解释.<BR>#box{<BR>width:600px;<BR>//for ie6.0- width:500px;<BR>//for ff+ie6.0<BR>}<BR>#box{<BR>width:600px!important<BR>//for ff<BR>width:600px;<BR>//for ff+ie6.0<BR>width :500px;<BR>//for ie6.0-<BR>}<BR>4 浮动ie产生的双倍距离<BR>#box{ float:left; width:100px; margin:0 0 0 100px; //这种情况之下IE会产生200px的距离 display:inline; //使浮动忽略}<BR>这里细说一下block,inline两个元素,Block元素的特点是:总是在新行上开始,高度,宽度,行高,边距都可以控制(块元素);Inline元素的特点是:和其他元素在同一行上,…不可控制(内嵌元素);<BR>#box{ display:block; //可以为内嵌元素模拟为块元素 display:inline; //实现同一行排列的的效果 diplay:table;<BR>5 IE与宽度和高度的问题<BR>IE不认得min-这个定义，但实际上它把正常的width和height当作有min的情况来使。这样问题就大了，如果只用宽度和高度，正常的浏览器里这两个值就不会变，如果只用min-width和min-height的话，IE下面根本等于没有设置宽度和高度。比如要设置背景图片，这个宽度是比较重要的。要解决这个问题，可以这样：<BR>#box{ width: 80px; height: 35px;}html&gt;body #box{ width: auto; height: auto; min-width: 80px; min-height: 35px;}<BR>6 页面的最小宽度<BR>min-width是个非常方便的CSS命令，它可以指定元素最小也不能小于某个宽度，这样就能保证排版一直正确。但IE不认得这个，而它实际上把 width当做最小宽度来使。为了让这一命令在IE上也能用，可以把一个&lt;div&gt; 放到 &lt;body&gt; 标签下，然后为div指定一个类：<BR>然后CSS这样设计：<BR>#container{<BR>min-width: 600px;<BR>width:e-xpression(document.body.clientWidth &lt; 600? “600px”: “auto” );<BR>}<BR>第一个min-width是正常的；但第2行的width使用了Javascript，这只有IE才认得，这也会让你的HTML文档不太正规。它实际上通过Javascript的判断来实现最小宽度。<BR>7 清除浮动<BR>.兼容box{<BR>display:table;<BR>//将对象作为块元素级的表格显示<BR>}<BR>或者<BR>.兼容box{<BR>clear:both;<BR>}<BR>或者加入:after（伪对象）,设置在对象后发生的内容，通常和content配合使用，IE不支持此伪对象，非Ie 浏览器支持，所以并不影响到IE/WIN浏览器。这种的最麻烦的<BR>……#box:after{<BR>content: “.”;<BR>display: block;<BR>height: 0;<BR>clear: both;<BR>visibility: hidden;<BR>}<BR>8 DIV浮动IE文本产生3象素的bug<BR>左边对象浮动，右边采用外补丁的左边距来定位，右边对象内的文本会离左边有3px的间距.<BR>#box{<BR>float:left;<BR>width:800px;}<BR>#left{<BR>float:left;<BR>width:50%;}<BR>#right{<BR>width:50%;<BR>}<BR>*html #left{<BR>margin-right:-3px;<BR>//这句是关键<BR>}<BR>HTML代码<BR>&lt;DIV id=box&gt;<BR>&lt;DIV id=left&gt;&lt;/DIV&gt;<BR>&lt;DIV id=right&gt;&lt;/DIV&gt;<BR>&lt;/DIV&gt;<BR>9 属性选择器(这个不能算是兼容,是隐藏css的一个bug)<BR>p[id]{}div[id]{}<BR>p[id]{}div[id]{}<BR>这个对于IE6.0和IE6.0以下的版本都隐藏,FF和OPera作用<BR>属性选择器和子选择器还是有区别的,子选择器的范围从形式来说缩小了,属性选择器的范围比较大,如p[id]中,所有p标签中有id的都是同样式的.<BR>10 IE捉迷藏的问题<BR>当div应用复杂的时候每个栏中又有一些链接，DIV等这个时候容易发生捉迷藏的问题。<BR>有些内容显示不出来，当鼠标选择这个区域是发现内容确实在页面。<BR>解决办法：对#layout使用line-height属性或者给#layout使用固定高和宽。页面结构尽量简单。<BR>11 高度不适应<BR>高度不适应是当内层对象的高度发生变化时外层高度不能自动进行调节，特别是当内层对象使用<BR>margin 或paddign 时。例：<BR>&lt;div id=”box”&gt;<BR>&lt;p&gt;p对象中的内容&lt;/p&gt;<BR>&lt;/div&gt;<BR>CSS：<BR>#box {background-color:#eee; }<BR>#box p {margin-top: 20px;margin-bottom: 20px; text-align:center; }<BR>解决方法：在P对象上下各加2个空的div对象CSS代码：.1{height:0px;overflow:hidden;}或者为DIV加上border属性。<BR>屏蔽IE浏览器（也就是IE下不显示）<BR>*:lang(zh) select {font:12px !important;}<BR>select:empty {font:12px !important;}<BR>这里select是选择符，根据情况更换。第二句是MAC上safari浏览器独有的。<BR>仅IE7识别<BR>*+html {…}<BR>当面临需要只针对IE7做样式的时候就可以采用这个兼容。<BR>IE6及IE6以下识别<BR>* html {…}<BR>这个地方要特别注意很多地主都写了是IE6的兼容其实IE5.x同样可以识别这个兼容。其它浏览器不识别。<BR>html &gt;body select {……}<BR>这句与上一句的作用相同。<BR>仅IE6不识别<BR>select { display :none;}<BR>这里主要是通过CSS注释分开一个属性与值，流释在冒号前。<BR>仅IE6与IE5不识别<BR>select { display :none;}<BR>这里与上面一句不同的是在选择符与花括号之间多了一个CSS注释。<BR>仅IE5不识别<BR>select { display:none;}<BR>这一句是在上一句中去掉了属性区的注释。只有IE5不识别<BR>盒模型解决方法<BR>selct {width:IE5.x宽度; voice-family :""}""; voice-family:inherit; width:正确宽度;}<BR>盒模型的清除方法不是通过!important来处理的。这点要明确。<BR>清除浮动<BR>select:after {content:"."; display:block; height:0; clear:both; visibility:hidden;}<BR>在Firefox中，当子级都为浮动时，那么父级的高度就无法完全的包住整个子级，那么这时用这个清除浮动的兼容来对父级做一次定义，那么就可以解决这个问题。<BR>截字省略号<BR>select { -o-text-overflow:ellipsis; text-overflow:ellipsis; white-space:nowrapoverflow:hidden; }<BR>这个是在越出长度后会自行的截掉多出部分的文字，并以省略号结尾，很好的一个技术。只是目前Firefox并不支持。<BR>只有Opera识别<BR>@media all and (min-width: 0px){ select {……} }<BR>针对Opera浏览器做单独的设定。<BR>以上都是写CSS中的一些兼容，建议遵循正确的标签嵌套(div ul li 嵌套结构关系)，这样可以减少你使用兼容的频率，不要进入理解误区，并不是一个页面就需要很多的兼容来保持多浏览器兼容)，很多情况下也许一个兼容都不用也可以让浏览器工作得非常好，这些都是用来解决局部的兼容性问题，如果希望把兼容性的内容也分离出来，不妨试一下下面的几种过滤器。这些过滤器有的是写在CSS中通过过滤器导入特别的样式，也有的是写在HTML中的通过条件来链接或是导入需要的补丁样式。<BR>IE5.x的过滤器，只有IE5.x可见<BR>@media tty {<BR>i{content:"";}} @import ’ie5win.css’;<BR>IE5/MAC的过滤器，一般用不着<BR>下面是IE的条件注释，个人觉得用条件注释调用相应兼容是比较完美的多浏览器兼容的解决办法。把需要兼容的地方单独放到一个文件里面，当浏览器版本符合的时候就可以调用那个被兼容的样式，这样不仅使用起来非常方便，而且对于制作这个CSS本身来讲，可以更严格的观察到是否有必要使用兼容，很多情况下，当我本人写CSS如果把全部代码包括兼容都写到一个CSS文件的时候的时候会很随意，想怎么兼容就怎么兼容，而你独立出来写的时候，你就会不自觉的考虑是否有必要兼容，是先兼容 CSS？还是先把主CSS里面的东西调整到尽可能的不需要兼容？当你仅用很少的兼容就让很多浏览器很乖很听话的时候，你是不是很有成就感呢？你知道怎么选择了吧～～呵呵<BR>IE的if条件兼容自己可以灵活使用参看这篇IE条件注释<BR>Only IE<BR>所有的IE可识别<BR>只有IE5.0可以识别<BR>Only IE 5.0+<BR>IE5.0包换IE5.5都可以识别<BR>仅IE6可识别<BR>Only IE 7/-<BR>IE6以及IE6以下的IE5.x都可识别<BR>Only IE 7/-<BR>仅IE7可识别<BR>Css 当中有许多的东西不不按照某些规律来的话，会让你很心烦，虽然你可以通过很多的兼容，很多的!important 来控制它，但是你会发现长此以往你会很不甘心，看看许多优秀的网站，他们的CSS让IE6,Ie7,Firefox,甚至Safari,Opera运行起来完美无缺是不是很羡慕？而他们看似复杂的模版下面使用的兼容少得可怜。其实你要知道IE 和 Firefox 并不不是那么的不和谐，我们找到一定的方法，是完全可以让他们和谐共处的。不要你认为发现了兼容的办法，你就掌握了一切，我们并不是兼容的奴隶。<BR>div ul li 的嵌套顺序<BR>今天只讲一个规则。就是&lt;div&gt;&lt;ul&gt;&lt;li&gt;的三角关系。我的经验就是&lt;div&gt;在最外面，里面是&lt;ul&gt;，然后再是&lt;li&gt;，当然&lt;li&gt;里面又可以嵌套&lt;div&gt;什么的，但是并不建议你嵌套很多东西。当你符合这样的规则的时候，那些倒霉的，不听话的间隙就不会在里面出现了，当你仅仅是&lt;div&gt;里面放&lt;li&gt;，而不用&lt;ul&gt;的时候，你会发现你的间隙十分难控制，一般情况下，IE6和IE7会凭空多一些间距。但很多情况你来到下一行，间隙就没了，但是前面的内容又空了很大一块，出现这种情况虽然你可以改变IE的Margin，然后调整Firefox下面的Padding，以便使得两者显示起来得效果很相似，但是你得CSS将变得臭长无比，你不得不多考虑更多可能出现这种问题补救措施，虽然你知道千篇一律来兼容它们，但是你会烦得要命。<BR>具体嵌套写法<BR>遵循上面得嵌套方式，&lt;div&gt;&lt;ul&gt;&lt;li&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt; 然后在CSS 里面告诉 ul {Margin:0px;Padding:0px;list-style.:none;}，其中list-style.:none是不让&lt;li&gt;标记的最前方显示圆点或者数字等目录类型的标记，因为IE和Firefox显示出来默认效果有些不一样。因此这样不需要做任何手脚，你的IE6、和IE7、Firefox显示出来的东西(外距，间距，高度，宽度)就几乎没什么区别了，也许细心的你会在某一个时刻发现一、两个象素的差别，但那已经很完美了，不需要你通过调整大片的CSS来控制它们的显示了，你愿意，你可以仅仅兼容一两个地方，而且通常这种兼容可以适应各种地方，不需要你重复在不同的地方调试不同的兼容方式–减轻你的烦。你可以ul.class1, ul.class2, ul.class3 {xxx:xxxx}的方式方便的整理出你要兼容的地方，而统一兼容。尝试一下吧，再也不要乱嵌套了，虽然在Div+CSS的方式下你几乎可以想怎么嵌套就怎么嵌套，但是按照上面的规律你将轻松很多，从而事半功倍！</P>
+	</div>
+	<div class="fr">
+		<ul>
+			<li><a href="#">关于我们</a></li>
+			<li><a href="#">关于我们</a></li>
+			<li><a href="#">关于我们</a></li>
+			<li><a href="#">关于我们</a></li>
+			<li class="txt">电话：0371-67182780</li>
+			<li>传真：0371-67182780</li>
+			<li>Email：webmatser@Singno.com</li>
+		</ul>
+	</div>
+</div>
+<div id="copyright">
+	<a href="#">关于我们</a> | <a href="#">网站建设套餐</a> | <a href="#">优化推广</a> | <a href="#">主机域名</a> | <a href="#">改版维护</a> | <a href="#">定制服务</a> | <a href="#">联系我们</a><br />
+	copyright 2009-2010 Singno.com All Rights Reserved <a href="mailto:webmaster@Singno.com">webmaster@Singno.com</a> 豫ICP备09021950号
+</div>
+<script type="text/javascript" src="/js/Sio.base_11.02.min.js"></script>
+<script type="text/javascript" src="/js/nav.js"></script>
+</body>
+</html>

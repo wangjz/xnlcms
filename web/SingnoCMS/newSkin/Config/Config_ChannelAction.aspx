@@ -1,0 +1,1 @@
+﻿<%@ Page Language="C#" AutoEventWireup="false" EnableEventValidation="false"  EnableTheming="false" EnableViewStateMac="false"  Inherits="COM.SingNo.Web.BackgroundBasePage" EnableViewState="false" validateRequest="false" %>

@@ -1,0 +1,165 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title></title>
+<link href="../css/Base.css" rel="stylesheet" type="text/css" />
+<link href="../css/Config.css" rel="stylesheet" type="text/css" />
+<link href="../css/plugin.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+.forms{ margin:0; border-left:10px solid #fff; border-right:10px solid #fff}
+input.X_input_text{ width:300px}
+</style>
+<script type="text/javascript">
+function submitIp()
+{
+	var errorObj={isError:false,Msg:""};
+	var ip=Sio.trim($i('ip').value);
+	if(ip=="")
+	{
+		errorObj.isError=true;
+		errorObj.Msg="ip地址不能为空!";
+	}
+	else
+	{
+		if(ip.indexOf('-')>=0)
+		{
+			var ip_array=ip.split('-');
+			if(ip_array.length>2)
+			{
+				errorObj.isError=true;
+				errorObj.Msg="范围格式错误！";
+			}
+			else
+			{
+				var reg=new RegExp('\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}');
+				var isOk=true;
+				for(var i=0;i<ip_array.length;i++)
+				{
+					if(!reg.test(ip_array[i])){isOk=false;break;}
+				}
+				if(!isOk)
+				{
+					errorObj.isError=true;
+					errorObj.Msg="范围格式错误,不是正确的ip地址！";
+				}
+				if(!errorObj.isError) //判断范围值是否正确
+				{
+					var ip1_array=ip_array[0].split('.');
+					var ip2_array=ip_array[1].split('.');
+					for(var i=0;i<ip1_array.length;i++)
+					{
+						if(ip2_array[i]<ip1_array[i]||ip1_array[i]>255||ip2_array[i]>255){isOk=false;break;}
+					}
+					if(!isOk)
+					{
+						errorObj.isError=true;
+						errorObj.Msg="范围ip数值错误,后面的ip地址应大于前面的ip地址且数值不能大于255！";
+					}
+				}
+			}
+		}
+		else if(ip.indexOf('*')>=0)
+		{
+			var reg=new RegExp('(\\d{1,3}|\\*)\\.(\\d{1,3}|\\*)\\.(\\d{1,3}|\\*)\\.(\\d{1,3}|\\*)');
+			if(!reg.test(ip))
+			{
+				errorObj.isError=true;
+				errorObj.Msg="不是正确的地址格式！";
+			}
+			else
+			{
+				var ip_array=ip.split('.');
+				for(var i=0;i<ip_array.length;i++)
+				{
+					if(ip_array[i]!="*"&&ip_array[i]>255)
+					{
+						errorObj.isError=true;
+						errorObj.Msg="不是正确的ip地址！";
+					}
+				}
+			}
+		}
+		else
+		{
+			var reg=new RegExp('\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}');
+			if(!reg.test(ip))
+			{
+				errorObj.isError=true;
+				errorObj.Msg="不是正确的ip地址！";
+			}
+			else
+			{
+				var ip_array=ip.split('.');
+				for(var i=0;i<ip_array.length;i++)
+				{
+					if(ip_array[i]>255)
+					{
+						errorObj.isError=true;
+						errorObj.Msg="不是正确的ip地址！";
+					}
+				}
+			}
+		}
+	}
+	if(errorObj.isError)
+	{
+		alert(errorObj.Msg);
+		$i('ip').focus();
+	}
+	else
+	{
+		new Sio.Ajax("Config_SystemAction.aspx?action=addBlackIp",{parameters:{ip:ip},onComplete:complete})
+	}
+}
+
+function complete(request)
+{
+	var obj=eval("("+request.responseText+")");
+	if(obj.state=="N")
+	{
+		alert(obj.msg);
+		$i('ip').focus();
+	}
+	else
+	{
+		alert("添加完成！");
+		$i('ip').value="";
+		$i('ip').focus();
+	}
+	//if(obj.state=="Y")window.parent.closeAlert();
+}
+</script>
+</head>
+<body>
+<form action="Config_SystemAction.aspx?action=addBlackIp"  method="post" onsubmit="submitIp();return false;">
+<table class="forms">
+	<tbody>
+		<tr>
+			<td width="100px">规则提示：</td>
+			<td>
+				xxx.xxx.xxx.xxx = 精确匹配<br />
+				xxx.xxx.xxx.xxx-xxx.xxx.xxx.xxx = 范围<br />
+				xxx.xxx.xxx.* = 任何匹配
+			</td>
+		</tr>
+		<tr>
+			<td>IP访问规则：</td>
+			<td><input type="text" name="ip" id="ip" /><span class="required">*</span></td>
+		</tr>
+	</tbody>
+	<tfoot>
+		<tr>
+			<td colspan="2"><div class="grayBg center"><input type="submit" value="添加规则" /></div></td>
+		</tr>
+	</tfoot>
+</table>
+</form>
+<script type="text/javascript" src="../JS/Sio.min.js"></script>
+<script type="text/javascript">
+Sio.Text();
+Sio.Button();
+
+</script>
+</body>
+</html>

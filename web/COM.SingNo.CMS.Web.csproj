@@ -1,0 +1,979 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{167305B3-93E0-4DBB-90E2-AB7B7129011A}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>COM.SingNo.Web</RootNamespace>
+    <AssemblyName>COM.SingNo.Web</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>singno.snk</AssemblyOriginatorKeyFile>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="LitJson, Version=0.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\LitJson.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="SingNoCMS.Web.GlobalInit.cs">
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Global.asax" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\COM.SingNo.CMS.Core\COM.SingNo.CMS.Core.csproj">
+      <Project>{52ACB41E-0A78-4DAB-82B9-FF97033C4385}</Project>
+      <Name>COM.SingNo.CMS.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\COM.Singno.Common\COM.SingNo.Common.csproj">
+      <Project>{1CDF3063-BD83-4630-AC1E-4F8D131063ED}</Project>
+      <Name>COM.SingNo.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DAL\COM.SingNo.DAL.csproj">
+      <Project>{66B7865E-95BF-4617-83AF-256AD517B43A}</Project>
+      <Name>COM.SingNo.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\XNLLib\XNL\COM.SingNo.XNLLib.XNL.csproj">
+      <Project>{4089DE07-82E3-4F41-8666-C18C1E8FA37E}</Project>
+      <Name>COM.SingNo.XNLLib.XNL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\COM.Singno.Common.dll" />
+    <Content Include="bin\LitJson.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\COM.SingNo.CMS.Core.dll" />
+    <Content Include="bin\COM.SingNo.CMS.Core.pdb" />
+    <Content Include="bin\COM.SingNo.Common.pdb" />
+    <Content Include="bin\COM.SingNo.Core.dll" />
+    <Content Include="bin\COM.SingNo.Core.pdb" />
+    <Content Include="bin\COM.SingNo.DAL.dll" />
+    <Content Include="bin\COM.SingNo.DAL.pdb" />
+    <Content Include="bin\COM.SingNo.XNLCore.dll" />
+    <Content Include="bin\COM.SingNo.XNLCore.pdb" />
+    <Content Include="bin\COM.SingNo.XNLEngine.dll" />
+    <Content Include="bin\COM.SingNo.XNLEngine.pdb" />
+    <Content Include="bin\COM.SingNo.XNLLib.Channel.dll" />
+    <Content Include="bin\COM.SingNo.XNLLib.Channel.pdb" />
+    <Content Include="bin\COM.SingNo.XNLLib.CMS.Manage.dll" />
+    <Content Include="bin\COM.SingNo.XNLLib.CMS.Manage.pdb" />
+    <Content Include="bin\COM.SingNo.XNLLib.Site.dll" />
+    <Content Include="bin\COM.SingNo.XNLLib.Site.pdb" />
+    <Content Include="bin\COM.SingNo.XNLLib.XNL.dll" />
+    <Content Include="bin\COM.SingNo.XNLLib.XNL.pdb" />
+    <Content Include="bin\FirebirdSql.Data.FirebirdClient.dll" />
+    <Content Include="bin\LitJson.pdb" />
+    <Content Include="GlobalFiles\Common\datepicker\calendar.js" />
+    <Content Include="GlobalFiles\Common\datepicker\config.js" />
+    <Content Include="GlobalFiles\Common\datepicker\lang\en.js" />
+    <Content Include="GlobalFiles\Common\datepicker\lang\zh-cn.js" />
+    <Content Include="GlobalFiles\Common\datepicker\lang\zh-tw.js" />
+    <Content Include="GlobalFiles\Common\datepicker\My97DatePicker.htm" />
+    <Content Include="GlobalFiles\Common\datepicker\skin\blue\bg.jpg" />
+    <Content Include="GlobalFiles\Common\datepicker\skin\blue\btnbg.jpg" />
+    <Content Include="GlobalFiles\Common\datepicker\skin\blue\datepicker.css" />
+    <Content Include="GlobalFiles\Common\datepicker\skin\blue\down.jpg" />
+    <Content Include="GlobalFiles\Common\datepicker\skin\blue\left.gif" />
+    <Content Include="GlobalFiles\Common\datepicker\skin\blue\navLeft.gif" />
+    <Content Include="GlobalFiles\Common\datepicker\skin\blue\navRight.gif" />
+    <Content Include="GlobalFiles\Common\datepicker\skin\blue\qs.jpg" />
+    <Content Include="GlobalFiles\Common\datepicker\skin\blue\right.gif" />
+    <Content Include="GlobalFiles\Common\datepicker\skin\blue\up.jpg" />
+    <Content Include="GlobalFiles\Common\datepicker\skin\datePicker.gif" />
+    <Content Include="GlobalFiles\Common\datepicker\skin\default\datepicker.css" />
+    <Content Include="GlobalFiles\Common\datepicker\skin\default\down.jpg" />
+    <Content Include="GlobalFiles\Common\datepicker\skin\default\left.gif" />
+    <Content Include="GlobalFiles\Common\datepicker\skin\default\navLeft.gif" />
+    <Content Include="GlobalFiles\Common\datepicker\skin\default\navRight.gif" />
+    <Content Include="GlobalFiles\Common\datepicker\skin\default\qs.jpg" />
+    <Content Include="GlobalFiles\Common\datepicker\skin\default\right.gif" />
+    <Content Include="GlobalFiles\Common\datepicker\skin\default\up.jpg" />
+    <Content Include="GlobalFiles\Common\datepicker\skin\WdatePicker.css" />
+    <Content Include="GlobalFiles\Common\datepicker\skin\whyGreen\bg.jpg" />
+    <Content Include="GlobalFiles\Common\datepicker\skin\whyGreen\datepicker.css" />
+    <Content Include="GlobalFiles\Common\datepicker\skin\whyGreen\down.jpg" />
+    <Content Include="GlobalFiles\Common\datepicker\skin\whyGreen\left.gif" />
+    <Content Include="GlobalFiles\Common\datepicker\skin\whyGreen\navLeft.gif" />
+    <Content Include="GlobalFiles\Common\datepicker\skin\whyGreen\navRight.gif" />
+    <Content Include="GlobalFiles\Common\datepicker\skin\whyGreen\qs.jpg" />
+    <Content Include="GlobalFiles\Common\datepicker\skin\whyGreen\right.gif" />
+    <Content Include="GlobalFiles\Common\datepicker\skin\whyGreen\up.jpg" />
+    <Content Include="GlobalFiles\Common\datepicker\skin\whyGreen\ymbg.jpg" />
+    <Content Include="GlobalFiles\Common\datepicker\WdatePicker.js" />
+    <Content Include="GlobalFiles\Common\editor\wymeditor\examples\01-basic.html" />
+    <Content Include="GlobalFiles\Common\editor\wymeditor\examples\02-custom-language.html" />
+    <Content Include="GlobalFiles\Common\editor\wymeditor\examples\03-plugin.html" />
+    <Content Include="GlobalFiles\Common\editor\wymeditor\examples\04-multiple-instances.html" />
+    <Content Include="GlobalFiles\Common\editor\wymeditor\examples\05-custom-dialog.html" />
+    <Content Include="GlobalFiles\Common\editor\wymeditor\examples\06-custom-menu.html" />
+    <Content Include="GlobalFiles\Common\editor\wymeditor\examples\07-custom-button.html" />
+    <Content Include="GlobalFiles\Common\editor\wymeditor\examples\08-custom-panel.html" />
+    <Content Include="GlobalFiles\Common\editor\wymeditor\examples\09-two-panels.html" />
+    <Content Include="GlobalFiles\Common\editor\wymeditor\examples\10-resizable.html" />
+    <Content Include="GlobalFiles\Common\editor\wymeditor\examples\11-custom-parser.html" />
+    <Content Include="GlobalFiles\Common\editor\wymeditor\examples\12-custom-layout.html" />
+    <Content Include="GlobalFiles\Common\editor\wymeditor\examples\13-silver-skin.html" />
+    <Content Include="GlobalFiles\Common\editor\wymeditor\examples\14-more-inline-elements.html" />
+    <Content Include="GlobalFiles\Common\editor\wymeditor\examples\15-rdfa-editor.html" />
+    <Content Include="GlobalFiles\Common\editor\wymeditor\examples\index.html" />
+    <Content Include="GlobalFiles\Common\editor\wymeditor\examples\styles.css" />
+    <Content Include="GlobalFiles\Common\editor\wymeditor\jquery\jquery.js" />
+    <Content Include="GlobalFiles\Common\editor\wymeditor\jquery\jquery.ui.draggable.js" />
+    <Content Include="GlobalFiles\Common\editor\wymeditor\jquery\jquery.ui.js" />
+    <Content Include="GlobalFiles\Common\editor\wymeditor\jquery\jquery.ui.resizable.js" />
+    <Content Include="GlobalFiles\Common\editor\wymeditor\jquery\jquery.ui.sortable.js" />
+    <Content Include="GlobalFiles\Common\editor\wymeditor\jquery\MIT-LICENSE.txt" />
+    <Content Include="GlobalFiles\Common\editor\wymeditor\MIT-license.txt" />
+    <Content Include="GlobalFiles\Common\editor\wymeditor\wymeditor\iframe\default\lbl-blockquote.png" />
+    <Content Include="GlobalFiles\Common\editor\wymeditor\wymeditor\iframe\default\lbl-h1.png" />
+    <Content Include="GlobalFiles\Common\editor\wymeditor\wymeditor\iframe\default\lbl-h2.png" />
+    <Content Include="GlobalFiles\Common\editor\wymeditor\wymeditor\iframe\default\lbl-h3.png" />
+    <Content Include="GlobalFiles\Common\editor\wymeditor\wymeditor\iframe\default\lbl-h4.png" />
+    <Content Include="GlobalFiles\Common\editor\wymeditor\wymeditor\iframe\default\lbl-h5.png" />
+    <Content Include="GlobalFiles\Common\editor\wymeditor\wymeditor\iframe\default\lbl-h6.png" />
+    <Content Include="GlobalFiles\Common\editor\wymeditor\wymeditor\iframe\default\lbl-p.png" />
+    <Content Include="GlobalFiles\Common\editor\wymeditor\wymeditor\iframe\default\lbl-pre.png" />
+    <Content Include="GlobalFiles\Common\editor\wymeditor\wymeditor\iframe\default\wymiframe.css" />
+    <Content Include="GlobalFiles\Common\editor\wymeditor\wymeditor\iframe\default\wymiframe.html" />
+    <Content Include="GlobalFiles\Common\editor\wymeditor\wymeditor\jquery.wymeditor.js" />
+    <Content Include="GlobalFiles\Common\editor\wymeditor\wymeditor\jquery.wymeditor.min.js" />
+    <Content Include="GlobalFiles\Common\editor\wymeditor\wymeditor\jquery.wymeditor.pack.js" />
+    <Content Include="GlobalFiles\Common\editor\wymeditor\wymeditor\lang\bg.js" />
+    <Content Include="GlobalFiles\Common\editor\wymeditor\wymeditor\lang\ca.js" />
+    <Content Include="GlobalFiles\Common\editor\wymeditor\wymeditor\lang\cs.js" />
+    <Content Include="GlobalFiles\Common\editor\wymeditor\wymeditor\lang\de.js" />
+    <Content Include="GlobalFiles\Common\editor\wymeditor\wymeditor\lang\en.js" />
+    <Content Include="GlobalFiles\Common\editor\wymeditor\wymeditor\lang\es.js" />
+    <Content Include="GlobalFiles\Common\editor\wymeditor\wymeditor\lang\fa.js" />
+    <Content Include="GlobalFiles\Common\editor\wymeditor\wymeditor\lang\fi.js" />
+    <Content Include="GlobalFiles\Common\editor\wymeditor\wymeditor\lang\fr.js" />
+    <Content Include="GlobalFiles\Common\editor\wymeditor\wymeditor\lang\he.js" />
+    <Content Include="GlobalFiles\Common\editor\wymeditor\wymeditor\lang\hr.js" />
+    <Content Include="GlobalFiles\Common\editor\wymeditor\wymeditor\lang\hu.js" />
+    <Content Include="GlobalFiles\Common\editor\wymeditor\wymeditor\lang\it.js" />
+    <Content Include="GlobalFiles\Common\editor\wymeditor\wymeditor\lang\nb.js" />
+    <Content Include="GlobalFiles\Common\editor\wymeditor\wymeditor\lang\nl.js" />
+    <Content Include="GlobalFiles\Common\editor\wymeditor\wymeditor\lang\nn.js" />
+    <Content Include="GlobalFiles\Common\editor\wymeditor\wymeditor\lang\pl.js" />
+    <Content Include="GlobalFiles\Common\editor\wymeditor\wymeditor\lang\pt-br.js" />
+    <Content Include="GlobalFiles\Common\editor\wymeditor\wymeditor\lang\pt.js" />
+    <Content Include="GlobalFiles\Common\editor\wymeditor\wymeditor\lang\ru.js" />
+    <Content Include="GlobalFiles\Common\editor\wymeditor\wymeditor\lang\sv.js" />
+    <Content Include="GlobalFiles\Common\editor\wymeditor\wymeditor\lang\tr.js" />
+    <Content Include="GlobalFiles\Common\editor\wymeditor\wymeditor\lang\zh_cn.js" />
+    <Content Include="GlobalFiles\Common\editor\wymeditor\wymeditor\plugins\embed\jquery.wymeditor.embed.js" />
+    <Content Include="GlobalFiles\Common\editor\wymeditor\wymeditor\plugins\fullscreen\icon_fullscreen.gif" />
+    <Content Include="GlobalFiles\Common\editor\wymeditor\wymeditor\plugins\fullscreen\jquery.wymeditor.fullscreen.js" />
+    <Content Include="GlobalFiles\Common\editor\wymeditor\wymeditor\plugins\hovertools\jquery.wymeditor.hovertools.js" />
+    <Content Include="GlobalFiles\Common\editor\wymeditor\wymeditor\plugins\resizable\jquery.wymeditor.resizable.js" />
+    <Content Include="GlobalFiles\Common\editor\wymeditor\wymeditor\plugins\resizable\readme.txt" />
+    <Content Include="GlobalFiles\Common\editor\wymeditor\wymeditor\plugins\tidy\jquery.wymeditor.tidy.js" />
+    <Content Include="GlobalFiles\Common\editor\wymeditor\wymeditor\plugins\tidy\wand.png" />
+    <Content Include="GlobalFiles\Common\editor\wymeditor\wymeditor\skins\compact\icons.png" />
+    <Content Include="GlobalFiles\Common\editor\wymeditor\wymeditor\skins\compact\skin.css" />
+    <Content Include="GlobalFiles\Common\editor\wymeditor\wymeditor\skins\compact\skin.js" />
+    <Content Include="GlobalFiles\Common\editor\wymeditor\wymeditor\skins\default\icons.png" />
+    <Content Include="GlobalFiles\Common\editor\wymeditor\wymeditor\skins\default\skin.css" />
+    <Content Include="GlobalFiles\Common\editor\wymeditor\wymeditor\skins\default\skin.js" />
+    <Content Include="GlobalFiles\Common\editor\wymeditor\wymeditor\skins\minimal\images\bg.header.gif" />
+    <Content Include="GlobalFiles\Common\editor\wymeditor\wymeditor\skins\minimal\images\bg.selector.silver.gif" />
+    <Content Include="GlobalFiles\Common\editor\wymeditor\wymeditor\skins\minimal\images\bg.wymeditor.png" />
+    <Content Include="GlobalFiles\Common\editor\wymeditor\wymeditor\skins\minimal\images\icons.silver.gif" />
+    <Content Include="GlobalFiles\Common\editor\wymeditor\wymeditor\skins\minimal\skin.css" />
+    <Content Include="GlobalFiles\Common\editor\wymeditor\wymeditor\skins\minimal\skin.js" />
+    <Content Include="GlobalFiles\Common\editor\wymeditor\wymeditor\skins\silver\images\bg.header.gif" />
+    <Content Include="GlobalFiles\Common\editor\wymeditor\wymeditor\skins\silver\images\bg.selector.silver.gif" />
+    <Content Include="GlobalFiles\Common\editor\wymeditor\wymeditor\skins\silver\images\bg.wymeditor.png" />
+    <Content Include="GlobalFiles\Common\editor\wymeditor\wymeditor\skins\silver\images\icons.silver.gif" />
+    <Content Include="GlobalFiles\Common\editor\wymeditor\wymeditor\skins\silver\skin.css" />
+    <Content Include="GlobalFiles\Common\editor\wymeditor\wymeditor\skins\silver\skin.js" />
+    <Content Include="GlobalFiles\Common\editor\wymeditor\wymeditor\skins\twopanels\icons.png" />
+    <Content Include="GlobalFiles\Common\editor\wymeditor\wymeditor\skins\twopanels\skin.css" />
+    <Content Include="GlobalFiles\Common\editor\wymeditor\wymeditor\skins\twopanels\skin.js" />
+    <Content Include="GlobalFiles\Common\editor\wymeditor\wymeditor\skins\wymeditor_icon.png" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\editor.htm" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\editor\base.css" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\editor\editor.js" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\editor\img.htm" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\editor\link.htm" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\editor\table.htm" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\editor\UploadImage.aspx" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\face\001.gif" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\face\002.gif" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\face\003.gif" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\face\004.gif" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\face\005.gif" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\face\006.gif" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\face\007.gif" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\face\008.gif" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\face\009.gif" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\face\010.gif" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\face\011.gif" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\face\012.gif" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\face\013.gif" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\face\014.gif" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\face\015.gif" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\face\016.gif" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\face\017.gif" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\face\018.gif" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\face\019.gif" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\face\020.gif" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\face\021.gif" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\face\022.gif" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\face\023.gif" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\face\024.gif" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\face\025.gif" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\face\026.gif" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\face\027.gif" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\face\028.gif" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\face\029.gif" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\face\030.gif" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\face\031.gif" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\face\032.gif" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\face\033.gif" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\face\034.gif" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\face\035.gif" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\face\036.gif" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\face\037.gif" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\face\038.gif" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\face\039.gif" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\face\040.gif" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\images\arrow_down.gif" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\images\arrow_up.gif" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\images\bg.gif" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\images\blue_sline.gif" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\images\box_vsplit.gif" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\images\del_btn.gif" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\images\dilog_bt_cancel.gif" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\images\dilog_bt_ok.gif" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\images\editor\blank.gif" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\images\editor\bold.gif" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\images\editor\bold_over.gif" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\images\editor\copy.gif" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\images\editor\copy_over.gif" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\images\editor\cut.gif" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\images\editor\cut_over.gif" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\images\editor\editor_foot.gif" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\images\editor\face.gif" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\images\editor\face_bg.gif" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\images\editor\face_over.gif" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\images\editor\forecolor.gif" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\images\editor\forecolor_over.gif" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\images\editor\guage.gif" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\images\editor\hilitecolor.gif" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\images\editor\hilitecolor_over.gif" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\images\editor\iask.gif" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\images\editor\iask_over.gif" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\images\editor\img.gif" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\images\editor\img_over.gif" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\images\editor\indent.gif" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\images\editor\indent_over.gif" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\images\editor\inserthorizontalrule.gif" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\images\editor\inserthorizontalrule_over.gif" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\images\editor\insertorderedlist.gif" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\images\editor\insertorderedlist_over.gif" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\images\editor\insertunorderedlist.gif" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\images\editor\insertunorderedlist_over.gif" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\images\editor\italic.gif" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\images\editor\italic_over.gif" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\images\editor\justifycenter.gif" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\images\editor\justifycenter_over.gif" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\images\editor\justifyformat.gif" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\images\editor\justifyformat_bg.gif" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\images\editor\justifyformat_over.gif" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\images\editor\justifyfull.gif" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\images\editor\justifyfull_over.gif" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\images\editor\justifyleft.gif" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\images\editor\justifyleft_over.gif" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\images\editor\justifyright.gif" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\images\editor\justifyright_over.gif" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\images\editor\link.gif" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\images\editor\link_over.gif" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\images\editor\menu_bg.gif" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\images\editor\menu_foot.gif" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\images\editor\menu_title.gif" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\images\editor\outdent.gif" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\images\editor\outdent_over.gif" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\images\editor\page.gif" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\images\editor\page_over.gif" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\images\editor\ParaFormatting.gif" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\images\editor\ParaFormatting_over.gif" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\images\editor\paste.gif" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\images\editor\paste_over.gif" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\images\editor\redo.gif" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\images\editor\redo_over.gif" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\images\editor\rsave.gif" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\images\editor\table.gif" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\images\editor\table_over.gif" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\images\editor\textarea.gif" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\images\editor\textarea_over.gif" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\images\editor\title_bg.gif" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\images\editor\toolbar_bg.gif" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\images\editor\underline.gif" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\images\editor\underline_over.gif" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\images\editor\undo.gif" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\images\editor\undo_over.gif" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\images\editor\view.gif" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\images\editor\view_over.gif" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\images\guage.gif" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\images\smb_btn_bg.gif" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\images\srch_btn.gif" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\images\tmpl_btn_bg.gif" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\images\update_btn1.gif" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\images\update_btn2.gif" />
+    <Content Include="GlobalFiles\Common\jquery\jquery.js" />
+    <Content Include="GlobalFiles\Common\Validator\css\validator.css" />
+    <Content Include="GlobalFiles\Common\Validator\css\validatorAuto.css" />
+    <Content Include="GlobalFiles\Common\Validator\images\bt.gif" />
+    <Content Include="GlobalFiles\Common\Validator\images\onCorrect.gif" />
+    <Content Include="GlobalFiles\Common\Validator\images\onError.gif" />
+    <Content Include="GlobalFiles\Common\Validator\images\onFocus.gif" />
+    <Content Include="GlobalFiles\Common\Validator\images\onLoad.gif" />
+    <Content Include="GlobalFiles\Common\Validator\images\onShow.gif" />
+    <Content Include="GlobalFiles\Common\Validator\images\onSuccess.gif" />
+    <Content Include="GlobalFiles\Common\Validator\js\formValidator.js" />
+    <Content Include="GlobalFiles\Common\Validator\js\formValidatorRegex.js" />
+    <Content Include="GlobalFiles\Data\SNdata.mdb">
+    </Content>
+    <Content Include="SingnoCMS\Common\editor\wymeditor\examples\01-basic.html" />
+    <Content Include="SingnoCMS\Common\editor\wymeditor\examples\02-custom-language.html" />
+    <Content Include="SingnoCMS\Common\editor\wymeditor\examples\03-plugin.html" />
+    <Content Include="SingnoCMS\Common\editor\wymeditor\examples\04-multiple-instances.html" />
+    <Content Include="SingnoCMS\Common\editor\wymeditor\examples\05-custom-dialog.html" />
+    <Content Include="SingnoCMS\Common\editor\wymeditor\examples\06-custom-menu.html" />
+    <Content Include="SingnoCMS\Common\editor\wymeditor\examples\07-custom-button.html" />
+    <Content Include="SingnoCMS\Common\editor\wymeditor\examples\08-custom-panel.html" />
+    <Content Include="SingnoCMS\Common\editor\wymeditor\examples\09-two-panels.html" />
+    <Content Include="SingnoCMS\Common\editor\wymeditor\examples\10-resizable.html" />
+    <Content Include="SingnoCMS\Common\editor\wymeditor\examples\11-custom-parser.html" />
+    <Content Include="SingnoCMS\Common\editor\wymeditor\examples\12-custom-layout.html" />
+    <Content Include="SingnoCMS\Common\editor\wymeditor\examples\13-silver-skin.html" />
+    <Content Include="SingnoCMS\Common\editor\wymeditor\examples\14-more-inline-elements.html" />
+    <Content Include="SingnoCMS\Common\editor\wymeditor\examples\15-rdfa-editor.html" />
+    <Content Include="SingnoCMS\Common\editor\wymeditor\examples\index.html" />
+    <Content Include="SingnoCMS\Common\editor\wymeditor\examples\styles.css" />
+    <Content Include="SingnoCMS\Common\editor\wymeditor\jquery\jquery.js" />
+    <Content Include="SingnoCMS\Common\editor\wymeditor\jquery\jquery.ui.draggable.js" />
+    <Content Include="SingnoCMS\Common\editor\wymeditor\jquery\jquery.ui.js" />
+    <Content Include="SingnoCMS\Common\editor\wymeditor\jquery\jquery.ui.resizable.js" />
+    <Content Include="SingnoCMS\Common\editor\wymeditor\jquery\jquery.ui.sortable.js" />
+    <Content Include="SingnoCMS\Common\editor\wymeditor\jquery\MIT-LICENSE.txt" />
+    <Content Include="SingnoCMS\Common\editor\wymeditor\MIT-license.txt" />
+    <Content Include="SingnoCMS\Common\editor\wymeditor\wymeditor\iframe\default\lbl-blockquote.png" />
+    <Content Include="SingnoCMS\Common\editor\wymeditor\wymeditor\iframe\default\lbl-h1.png" />
+    <Content Include="SingnoCMS\Common\editor\wymeditor\wymeditor\iframe\default\lbl-h2.png" />
+    <Content Include="SingnoCMS\Common\editor\wymeditor\wymeditor\iframe\default\lbl-h3.png" />
+    <Content Include="SingnoCMS\Common\editor\wymeditor\wymeditor\iframe\default\lbl-h4.png" />
+    <Content Include="SingnoCMS\Common\editor\wymeditor\wymeditor\iframe\default\lbl-h5.png" />
+    <Content Include="SingnoCMS\Common\editor\wymeditor\wymeditor\iframe\default\lbl-h6.png" />
+    <Content Include="SingnoCMS\Common\editor\wymeditor\wymeditor\iframe\default\lbl-p.png" />
+    <Content Include="SingnoCMS\Common\editor\wymeditor\wymeditor\iframe\default\lbl-pre.png" />
+    <Content Include="SingnoCMS\Common\editor\wymeditor\wymeditor\iframe\default\wymiframe.css" />
+    <Content Include="SingnoCMS\Common\editor\wymeditor\wymeditor\iframe\default\wymiframe.html" />
+    <Content Include="SingnoCMS\Common\editor\wymeditor\wymeditor\jquery.wymeditor.js" />
+    <Content Include="SingnoCMS\Common\editor\wymeditor\wymeditor\jquery.wymeditor.min.js" />
+    <Content Include="SingnoCMS\Common\editor\wymeditor\wymeditor\jquery.wymeditor.pack.js" />
+    <Content Include="SingnoCMS\Common\editor\wymeditor\wymeditor\lang\bg.js" />
+    <Content Include="SingnoCMS\Common\editor\wymeditor\wymeditor\lang\ca.js" />
+    <Content Include="SingnoCMS\Common\editor\wymeditor\wymeditor\lang\cs.js" />
+    <Content Include="SingnoCMS\Common\editor\wymeditor\wymeditor\lang\de.js" />
+    <Content Include="SingnoCMS\Common\editor\wymeditor\wymeditor\lang\en.js" />
+    <Content Include="SingnoCMS\Common\editor\wymeditor\wymeditor\lang\es.js" />
+    <Content Include="SingnoCMS\Common\editor\wymeditor\wymeditor\lang\fa.js" />
+    <Content Include="SingnoCMS\Common\editor\wymeditor\wymeditor\lang\fi.js" />
+    <Content Include="SingnoCMS\Common\editor\wymeditor\wymeditor\lang\fr.js" />
+    <Content Include="SingnoCMS\Common\editor\wymeditor\wymeditor\lang\he.js" />
+    <Content Include="SingnoCMS\Common\editor\wymeditor\wymeditor\lang\hr.js" />
+    <Content Include="SingnoCMS\Common\editor\wymeditor\wymeditor\lang\hu.js" />
+    <Content Include="SingnoCMS\Common\editor\wymeditor\wymeditor\lang\it.js" />
+    <Content Include="SingnoCMS\Common\editor\wymeditor\wymeditor\lang\nb.js" />
+    <Content Include="SingnoCMS\Common\editor\wymeditor\wymeditor\lang\nl.js" />
+    <Content Include="SingnoCMS\Common\editor\wymeditor\wymeditor\lang\nn.js" />
+    <Content Include="SingnoCMS\Common\editor\wymeditor\wymeditor\lang\pl.js" />
+    <Content Include="SingnoCMS\Common\editor\wymeditor\wymeditor\lang\pt-br.js" />
+    <Content Include="SingnoCMS\Common\editor\wymeditor\wymeditor\lang\pt.js" />
+    <Content Include="SingnoCMS\Common\editor\wymeditor\wymeditor\lang\ru.js" />
+    <Content Include="SingnoCMS\Common\editor\wymeditor\wymeditor\lang\sv.js" />
+    <Content Include="SingnoCMS\Common\editor\wymeditor\wymeditor\lang\tr.js" />
+    <Content Include="SingnoCMS\Common\editor\wymeditor\wymeditor\lang\zh_cn.js" />
+    <Content Include="SingnoCMS\Common\editor\wymeditor\wymeditor\plugins\embed\jquery.wymeditor.embed.js" />
+    <Content Include="SingnoCMS\Common\editor\wymeditor\wymeditor\plugins\fullscreen\icon_fullscreen.gif" />
+    <Content Include="SingnoCMS\Common\editor\wymeditor\wymeditor\plugins\fullscreen\jquery.wymeditor.fullscreen.js" />
+    <Content Include="SingnoCMS\Common\editor\wymeditor\wymeditor\plugins\hovertools\jquery.wymeditor.hovertools.js" />
+    <Content Include="SingnoCMS\Common\editor\wymeditor\wymeditor\plugins\resizable\jquery.wymeditor.resizable.js" />
+    <Content Include="SingnoCMS\Common\editor\wymeditor\wymeditor\plugins\resizable\readme.txt" />
+    <Content Include="SingnoCMS\Common\editor\wymeditor\wymeditor\plugins\tidy\jquery.wymeditor.tidy.js" />
+    <Content Include="SingnoCMS\Common\editor\wymeditor\wymeditor\plugins\tidy\wand.png" />
+    <Content Include="SingnoCMS\Common\editor\wymeditor\wymeditor\skins\compact\icons.png" />
+    <Content Include="SingnoCMS\Common\editor\wymeditor\wymeditor\skins\compact\skin.css" />
+    <Content Include="SingnoCMS\Common\editor\wymeditor\wymeditor\skins\compact\skin.js" />
+    <Content Include="SingnoCMS\Common\editor\wymeditor\wymeditor\skins\default\icons.png" />
+    <Content Include="SingnoCMS\Common\editor\wymeditor\wymeditor\skins\default\skin.css" />
+    <Content Include="SingnoCMS\Common\editor\wymeditor\wymeditor\skins\default\skin.js" />
+    <Content Include="SingnoCMS\Common\editor\wymeditor\wymeditor\skins\minimal\images\bg.header.gif" />
+    <Content Include="SingnoCMS\Common\editor\wymeditor\wymeditor\skins\minimal\images\bg.selector.silver.gif" />
+    <Content Include="SingnoCMS\Common\editor\wymeditor\wymeditor\skins\minimal\images\bg.wymeditor.png" />
+    <Content Include="SingnoCMS\Common\editor\wymeditor\wymeditor\skins\minimal\images\icons.silver.gif" />
+    <Content Include="SingnoCMS\Common\editor\wymeditor\wymeditor\skins\minimal\skin.css" />
+    <Content Include="SingnoCMS\Common\editor\wymeditor\wymeditor\skins\minimal\skin.js" />
+    <Content Include="SingnoCMS\Common\editor\wymeditor\wymeditor\skins\silver\images\bg.header.gif" />
+    <Content Include="SingnoCMS\Common\editor\wymeditor\wymeditor\skins\silver\images\bg.selector.silver.gif" />
+    <Content Include="SingnoCMS\Common\editor\wymeditor\wymeditor\skins\silver\images\bg.wymeditor.png" />
+    <Content Include="SingnoCMS\Common\editor\wymeditor\wymeditor\skins\silver\images\icons.silver.gif" />
+    <Content Include="SingnoCMS\Common\editor\wymeditor\wymeditor\skins\silver\skin.css" />
+    <Content Include="SingnoCMS\Common\editor\wymeditor\wymeditor\skins\silver\skin.js" />
+    <Content Include="SingnoCMS\Common\editor\wymeditor\wymeditor\skins\twopanels\icons.png" />
+    <Content Include="SingnoCMS\Common\editor\wymeditor\wymeditor\skins\twopanels\skin.css" />
+    <Content Include="SingnoCMS\Common\editor\wymeditor\wymeditor\skins\twopanels\skin.js" />
+    <Content Include="SingnoCMS\Common\editor\wymeditor\wymeditor\skins\wymeditor_icon.png" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\editor.htm" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\editor\base.css" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\editor\editor.js" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\editor\img.htm" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\editor\link.htm" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\editor\table.htm" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\editor\UploadImage.aspx" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\face\001.gif" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\face\002.gif" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\face\003.gif" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\face\004.gif" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\face\005.gif" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\face\006.gif" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\face\007.gif" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\face\008.gif" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\face\009.gif" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\face\010.gif" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\face\011.gif" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\face\012.gif" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\face\013.gif" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\face\014.gif" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\face\015.gif" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\face\016.gif" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\face\017.gif" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\face\018.gif" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\face\019.gif" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\face\020.gif" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\face\021.gif" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\face\022.gif" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\face\023.gif" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\face\024.gif" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\face\025.gif" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\face\026.gif" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\face\027.gif" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\face\028.gif" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\face\029.gif" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\face\030.gif" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\face\031.gif" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\face\032.gif" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\face\033.gif" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\face\034.gif" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\face\035.gif" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\face\036.gif" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\face\037.gif" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\face\038.gif" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\face\039.gif" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\face\040.gif" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\images\arrow_down.gif" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\images\arrow_up.gif" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\images\bg.gif" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\images\blue_sline.gif" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\images\box_vsplit.gif" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\images\del_btn.gif" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\images\dilog_bt_cancel.gif" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\images\dilog_bt_ok.gif" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\images\editor\blank.gif" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\images\editor\bold.gif" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\images\editor\bold_over.gif" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\images\editor\copy.gif" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\images\editor\copy_over.gif" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\images\editor\cut.gif" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\images\editor\cut_over.gif" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\images\editor\editor_foot.gif" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\images\editor\face.gif" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\images\editor\face_bg.gif" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\images\editor\face_over.gif" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\images\editor\forecolor.gif" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\images\editor\forecolor_over.gif" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\images\editor\guage.gif" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\images\editor\hilitecolor.gif" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\images\editor\hilitecolor_over.gif" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\images\editor\iask.gif" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\images\editor\iask_over.gif" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\images\editor\img.gif" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\images\editor\img_over.gif" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\images\editor\indent.gif" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\images\editor\indent_over.gif" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\images\editor\inserthorizontalrule.gif" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\images\editor\inserthorizontalrule_over.gif" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\images\editor\insertorderedlist.gif" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\images\editor\insertorderedlist_over.gif" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\images\editor\insertunorderedlist.gif" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\images\editor\insertunorderedlist_over.gif" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\images\editor\italic.gif" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\images\editor\italic_over.gif" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\images\editor\justifycenter.gif" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\images\editor\justifycenter_over.gif" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\images\editor\justifyformat.gif" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\images\editor\justifyformat_bg.gif" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\images\editor\justifyformat_over.gif" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\images\editor\justifyfull.gif" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\images\editor\justifyfull_over.gif" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\images\editor\justifyleft.gif" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\images\editor\justifyleft_over.gif" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\images\editor\justifyright.gif" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\images\editor\justifyright_over.gif" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\images\editor\link.gif" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\images\editor\link_over.gif" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\images\editor\menu_bg.gif" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\images\editor\menu_foot.gif" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\images\editor\menu_title.gif" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\images\editor\outdent.gif" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\images\editor\outdent_over.gif" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\images\editor\page.gif" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\images\editor\page_over.gif" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\images\editor\ParaFormatting.gif" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\images\editor\ParaFormatting_over.gif" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\images\editor\paste.gif" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\images\editor\paste_over.gif" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\images\editor\redo.gif" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\images\editor\redo_over.gif" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\images\editor\rsave.gif" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\images\editor\table.gif" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\images\editor\table_over.gif" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\images\editor\textarea.gif" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\images\editor\textarea_over.gif" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\images\editor\title_bg.gif" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\images\editor\toolbar_bg.gif" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\images\editor\underline.gif" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\images\editor\underline_over.gif" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\images\editor\undo.gif" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\images\editor\undo_over.gif" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\images\editor\view.gif" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\images\editor\view_over.gif" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\images\guage.gif" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\images\smb_btn_bg.gif" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\images\srch_btn.gif" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\images\tmpl_btn_bg.gif" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\images\update_btn1.gif" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\images\update_btn2.gif" />
+    <Content Include="SingnoCMS\Common\jquery\jquery.js" />
+    <Content Include="SingnoCMS\default.aspx" />
+    <Content Include="SingnoCMS\default.html" />
+    <Content Include="SingnoCMS\newSkin\AdminUser\AdminUser_action.aspx" />
+    <Content Include="SingnoCMS\newSkin\AdminUser\AdminUser_addManager.aspx" />
+    <Content Include="SingnoCMS\newSkin\AdminUser\AdminUser_createRole.aspx" />
+    <Content Include="SingnoCMS\newSkin\AdminUser\AdminUser_manageManager.aspx" />
+    <Content Include="SingnoCMS\newSkin\AdminUser\AdminUser_manageRole.aspx" />
+    <Content Include="SingnoCMS\newSkin\AdminUser\AdminUser_manageRoleRight.aspx" />
+    <Content Include="SingnoCMS\newSkin\AdminUser\AdminUser_ManagesiteNodeRights.aspx" />
+    <Content Include="SingnoCMS\newSkin\AdminUser\AdminUser_permis.aspx" />
+    <Content Include="SingnoCMS\newSkin\AdminUser\AdminUser_siteNodeRights.aspx" />
+    <Content Include="SingnoCMS\newSkin\Channel\Channel_Action.aspx" />
+    <Content Include="SingnoCMS\newSkin\Channel\Channel_addChannel.aspx" />
+    <Content Include="SingnoCMS\newSkin\Channel\Channel_addChannelGroup.aspx" />
+    <Content Include="SingnoCMS\newSkin\Channel\Channel_ChannelRecycle.aspx" />
+    <Content Include="SingnoCMS\newSkin\Channel\Channel_manageChannel.aspx" />
+    <Content Include="SingnoCMS\newSkin\Channel\Channel_manageChannelGroup.aspx" />
+    <Content Include="SingnoCMS\newSkin\Config\Config_addBlackList.html" />
+    <Content Include="SingnoCMS\newSkin\Config\Config_addWhiteList.html" />
+    <Content Include="SingnoCMS\newSkin\Config\Config_Comments.aspx" />
+    <Content Include="SingnoCMS\newSkin\Config\Config_CommentsFrame.aspx" />
+    <Content Include="SingnoCMS\newSkin\Config\Config_Content.aspx" />
+    <Content Include="SingnoCMS\newSkin\Config\Config_ContentFrame.aspx" />
+    <Content Include="SingnoCMS\newSkin\Config\Config_Create.aspx" />
+    <Content Include="SingnoCMS\newSkin\Config\Config_CreateChannel.aspx" />
+    <Content Include="SingnoCMS\newSkin\Config\Config_CreateChannelFrame.aspx" />
+    <Content Include="SingnoCMS\newSkin\Config\Config_CRight.aspx" />
+    <Content Include="SingnoCMS\newSkin\Config\Config_Email.aspx" />
+    <Content Include="SingnoCMS\newSkin\Config\Config_GB.aspx" />
+    <Content Include="SingnoCMS\newSkin\Config\Config_License.aspx" />
+    <Content Include="SingnoCMS\newSkin\Config\Config_manageBlackList.aspx" />
+    <Content Include="SingnoCMS\newSkin\Config\Config_manageWhiteList.aspx" />
+    <Content Include="SingnoCMS\newSkin\Config\Config_PicWater.aspx" />
+    <Content Include="SingnoCMS\newSkin\Config\Config_Received.aspx" />
+    <Content Include="SingnoCMS\newSkin\Config\Config_ReceivedFrame.aspx" />
+    <Content Include="SingnoCMS\newSkin\Config\Config_SetLicense.aspx" />
+    <Content Include="SingnoCMS\newSkin\Config\Config_Site.aspx" />
+    <Content Include="SingnoCMS\newSkin\Config\Config_System.aspx" />
+    <Content Include="SingnoCMS\newSkin\Config\Config_Upload.aspx" />
+    <Content Include="SingnoCMS\newSkin\Config\Config_User.aspx" />
+    <Content Include="SingnoCMS\newSkin\Config\Config_VisitFrame.aspx" />
+    <Content Include="SingnoCMS\newSkin\Content\Content_Action.aspx" />
+    <Content Include="SingnoCMS\newSkin\Content\Content_addContent.aspx" />
+    <Content Include="SingnoCMS\newSkin\Content\Content_addInfo_xnl.aspx" />
+    <Content Include="SingnoCMS\newSkin\Content\Content_manage.aspx" />
+    <Content Include="SingnoCMS\newSkin\Content\Content_Recycle.aspx" />
+    <Content Include="SingnoCMS\newSkin\Content\Content_showAttr.aspx" />
+    <Content Include="SingnoCMS\newSkin\css\Base.css" />
+    <Content Include="SingnoCMS\newSkin\css\Config.css" />
+    <Content Include="SingnoCMS\newSkin\css\content.css" />
+    <Content Include="SingnoCMS\newSkin\css\Function.css" />
+    <Content Include="SingnoCMS\newSkin\css\login.css" />
+    <Content Include="SingnoCMS\newSkin\css\main.css" />
+    <Content Include="SingnoCMS\newSkin\css\Other.css" />
+    <Content Include="SingnoCMS\newSkin\css\plugin.css" />
+    <Content Include="SingnoCMS\newSkin\css\TemplateLabel.css" />
+    <Content Include="SingnoCMS\newSkin\css\User.css" />
+    <Content Include="SingnoCMS\newSkin\Function\Function_CreateAction.aspx" />
+    <Content Include="SingnoCMS\newSkin\Function\Function_createColumns.aspx" />
+    <Content Include="SingnoCMS\newSkin\Function\Function_createContent.aspx" />
+    <Content Include="SingnoCMS\newSkin\Function\Function_createFiles.aspx" />
+    <Content Include="SingnoCMS\newSkin\Function\Function_createIndex.aspx" />
+    <Content Include="SingnoCMS\newSkin\Images\add.gif" />
+    <Content Include="SingnoCMS\newSkin\Images\addPic.png" />
+    <Content Include="SingnoCMS\newSkin\Images\arrow_1.gif" />
+    <Content Include="SingnoCMS\newSkin\Images\arrow_2.gif" />
+    <Content Include="SingnoCMS\newSkin\Images\bg.png" />
+    <Content Include="SingnoCMS\newSkin\Images\button_bg.gif" />
+    <Content Include="SingnoCMS\newSkin\Images\ctrlCmd.gif" />
+    <Content Include="SingnoCMS\newSkin\Images\demoPic.jpg" />
+    <Content Include="SingnoCMS\newSkin\Images\home.gif" />
+    <Content Include="SingnoCMS\newSkin\Images\icons\ico_01.gif" />
+    <Content Include="SingnoCMS\newSkin\Images\icons\ico_02.gif" />
+    <Content Include="SingnoCMS\newSkin\Images\icons\ico_03.gif" />
+    <Content Include="SingnoCMS\newSkin\Images\icons\ico_04.gif" />
+    <Content Include="SingnoCMS\newSkin\Images\icons\ico_05.gif" />
+    <Content Include="SingnoCMS\newSkin\Images\icons\ico_06.gif" />
+    <Content Include="SingnoCMS\newSkin\Images\icons\ico_07.gif" />
+    <Content Include="SingnoCMS\newSkin\Images\icons\ico_08.gif" />
+    <Content Include="SingnoCMS\newSkin\Images\icons\ico_09.gif" />
+    <Content Include="SingnoCMS\newSkin\Images\icons\ico_10.gif" />
+    <Content Include="SingnoCMS\newSkin\Images\ico_bg.gif" />
+    <Content Include="SingnoCMS\newSkin\Images\login_bg.gif" />
+    <Content Include="SingnoCMS\newSkin\Images\login_code.gif" />
+    <Content Include="SingnoCMS\newSkin\Images\logo.gif" />
+    <Content Include="SingnoCMS\newSkin\Images\logo_login.gif" />
+    <Content Include="SingnoCMS\newSkin\Images\more_search.gif" />
+    <Content Include="SingnoCMS\newSkin\Images\ok.png" />
+    <Content Include="SingnoCMS\newSkin\Images\Plugin\alert_bg.gif" />
+    <Content Include="SingnoCMS\newSkin\Images\Plugin\alert_close.gif" />
+    <Content Include="SingnoCMS\newSkin\Images\Plugin\cmd.png" />
+    <Content Include="SingnoCMS\newSkin\Images\Plugin\empty.gif" />
+    <Content Include="SingnoCMS\newSkin\Images\Plugin\focus_bg.png" />
+    <Content Include="SingnoCMS\newSkin\Images\Plugin\folder.gif" />
+    <Content Include="SingnoCMS\newSkin\Images\Plugin\folderopen.gif" />
+    <Content Include="SingnoCMS\newSkin\Images\Plugin\input_bg.png" />
+    <Content Include="SingnoCMS\newSkin\Images\Plugin\nolines_minus.gif" />
+    <Content Include="SingnoCMS\newSkin\Images\Plugin\nolines_plus.gif" />
+    <Content Include="SingnoCMS\newSkin\Images\Plugin\onbottom.gif" />
+    <Content Include="SingnoCMS\newSkin\Images\Plugin\page.gif" />
+    <Content Include="SingnoCMS\newSkin\Images\Plugin\slider_x.gif" />
+    <Content Include="SingnoCMS\newSkin\Images\Plugin\slider_y.gif" />
+    <Content Include="SingnoCMS\newSkin\Images\ruler.gif" />
+    <Content Include="SingnoCMS\newSkin\Images\site_bg.png" />
+    <Content Include="SingnoCMS\newSkin\Images\skin.gif" />
+    <Content Include="SingnoCMS\newSkin\Images\Stars\star_level1.gif" />
+    <Content Include="SingnoCMS\newSkin\Images\Stars\star_level2.gif" />
+    <Content Include="SingnoCMS\newSkin\Images\Stars\star_level3.gif" />
+    <Content Include="SingnoCMS\newSkin\Images\table_bg.png" />
+    <Content Include="SingnoCMS\newSkin\Images\tab_bg.png" />
+    <Content Include="SingnoCMS\newSkin\Images\title_bg.png" />
+    <Content Include="SingnoCMS\newSkin\Images\title_login.gif" />
+    <Content Include="SingnoCMS\newSkin\Inc\Inc_Common.aspx" />
+    <Content Include="SingnoCMS\newSkin\Inc\Inc_Login.aspx" />
+    <Content Include="SingnoCMS\newSkin\Init.aspx" />
+    <Content Include="SingnoCMS\newSkin\install\Iinstall_siteAction.html" />
+    <Content Include="SingnoCMS\newSkin\install\Images\install_logo.gif" />
+    <Content Include="SingnoCMS\newSkin\install\Images\shadow_bg.gif" />
+    <Content Include="SingnoCMS\newSkin\install\Images\shadow_bottom.gif" />
+    <Content Include="SingnoCMS\newSkin\install\install.css" />
+    <Content Include="SingnoCMS\newSkin\install\Install_install.html" />
+    <Content Include="SingnoCMS\newSkin\JS\advSearch.js" />
+    <Content Include="SingnoCMS\newSkin\JS\big_button.js" />
+    <Content Include="SingnoCMS\newSkin\JS\calendar.min.js" />
+    <Content Include="SingnoCMS\newSkin\JS\classDate.js" />
+    <Content Include="SingnoCMS\newSkin\JS\icoHover.js" />
+    <Content Include="SingnoCMS\newSkin\JS\inputInsertor.js" />
+    <Content Include="SingnoCMS\newSkin\JS\main.js" />
+    <Content Include="SingnoCMS\newSkin\JS\selectAllItem.js" />
+    <Content Include="SingnoCMS\newSkin\JS\selectIcos.js" />
+    <Content Include="SingnoCMS\newSkin\JS\Sio.min.js" />
+    <Content Include="SingnoCMS\newSkin\Login.html" />
+    <Content Include="SingnoCMS\newSkin\Main.aspx" />
+    <Content Include="SingnoCMS\newSkin\Model\Model_action.aspx" />
+    <Content Include="SingnoCMS\newSkin\Model\Model_AddField.aspx" />
+    <Content Include="SingnoCMS\newSkin\Model\Model_addModel.aspx" />
+    <Content Include="SingnoCMS\newSkin\Model\Model_AddStyle.aspx" />
+    <Content Include="SingnoCMS\newSkin\Model\Model_manageModel.aspx" />
+    <Content Include="SingnoCMS\newSkin\Model\Model_ModelManage.aspx" />
+    <Content Include="SingnoCMS\newSkin\Model\Model_setModelPage.aspx" />
+    <Content Include="SingnoCMS\newSkin\Model\Model_ShowField.aspx" />
+    <Content Include="SingnoCMS\newSkin\Other\Other_addLink.aspx" />
+    <Content Include="SingnoCMS\newSkin\Other\Other_manageComments.aspx" />
+    <Content Include="SingnoCMS\newSkin\Other\Other_manageFiles.aspx" />
+    <Content Include="SingnoCMS\newSkin\Other\Other_manageGB.aspx" />
+    <Content Include="SingnoCMS\newSkin\Other\Other_manageLinks.aspx" />
+    <Content Include="SingnoCMS\newSkin\TemplateLabel\Templatel_addLabel.aspx" />
+    <Content Include="SingnoCMS\newSkin\TemplateLabel\Templatel_manageRule.aspx" />
+    <Content Include="SingnoCMS\newSkin\TemplateLabel\Template_action.aspx" />
+    <Content Include="SingnoCMS\newSkin\TemplateLabel\Template_addProject.aspx" />
+    <Content Include="SingnoCMS\newSkin\TemplateLabel\Template_addTemplate.aspx" />
+    <Content Include="SingnoCMS\newSkin\TemplateLabel\Template_createRule.aspx" />
+    <Content Include="SingnoCMS\newSkin\TemplateLabel\Template_manageLabel.aspx" />
+    <Content Include="SingnoCMS\newSkin\TemplateLabel\Template_manageTemplate.aspx" />
+    <Content Include="SingnoCMS\newSkin\TemplateLabel\Template_matchTemplates.aspx" />
+    <Content Include="SingnoCMS\newSkin\TemplateLabel\Template_ModifyTemplate.aspx" />
+    <Content Include="SingnoCMS\newSkin\TemplateLabel\Template_setCreateRule.aspx" />
+    <Content Include="SingnoCMS\newSkin\Template\AdminUser\AdminUser_action.ascx" />
+    <Content Include="SingnoCMS\newSkin\Template\AdminUser\AdminUser_addManager.ascx" />
+    <Content Include="SingnoCMS\newSkin\Template\AdminUser\AdminUser_createRole.ascx" />
+    <Content Include="SingnoCMS\newSkin\Template\AdminUser\AdminUser_manageManager.ascx" />
+    <Content Include="SingnoCMS\newSkin\Template\AdminUser\AdminUser_manageRole.ascx" />
+    <Content Include="SingnoCMS\newSkin\Template\AdminUser\AdminUser_manageRoleRight.ascx" />
+    <Content Include="SingnoCMS\newSkin\Template\AdminUser\AdminUser_ManagesiteNodeRights.ascx" />
+    <Content Include="SingnoCMS\newSkin\Template\AdminUser\AdminUser_permis.ascx" />
+    <Content Include="SingnoCMS\newSkin\Template\AdminUser\AdminUser_siteNodeRights.ascx" />
+    <Content Include="SingnoCMS\newSkin\Template\Channel\Channel_Action.ascx" />
+    <Content Include="SingnoCMS\newSkin\Template\Channel\Channel_addChannel.ascx" />
+    <Content Include="SingnoCMS\newSkin\Template\Channel\Channel_addChannelGroup.ascx" />
+    <Content Include="SingnoCMS\newSkin\Template\Channel\Channel_ChannelRecycle.ascx" />
+    <Content Include="SingnoCMS\newSkin\Template\Channel\Channel_manageChannel.ascx" />
+    <Content Include="SingnoCMS\newSkin\Template\Channel\Channel_manageChannelGroup.ascx" />
+    <Content Include="SingnoCMS\newSkin\Template\Config\Config_Comments.ascx" />
+    <Content Include="SingnoCMS\newSkin\Template\Config\Config_CommentsFrame.ascx" />
+    <Content Include="SingnoCMS\newSkin\Template\Config\Config_Content.ascx" />
+    <Content Include="SingnoCMS\newSkin\Template\Config\Config_ContentFrame.ascx" />
+    <Content Include="SingnoCMS\newSkin\Template\Config\Config_Create.ascx" />
+    <Content Include="SingnoCMS\newSkin\Template\Config\Config_CreateChannel.ascx" />
+    <Content Include="SingnoCMS\newSkin\Template\Config\Config_CreateChannelFrame.ascx" />
+    <Content Include="SingnoCMS\newSkin\Template\Config\Config_CRight.ascx" />
+    <Content Include="SingnoCMS\newSkin\Template\Config\Config_Email.ascx" />
+    <Content Include="SingnoCMS\newSkin\Template\Config\Config_GB.ascx" />
+    <Content Include="SingnoCMS\newSkin\Template\Config\Config_License.ascx" />
+    <Content Include="SingnoCMS\newSkin\Template\Config\Config_manageBlackList.ascx" />
+    <Content Include="SingnoCMS\newSkin\Template\Config\Config_manageWhiteList.ascx" />
+    <Content Include="SingnoCMS\newSkin\Template\Config\Config_PicWater.ascx" />
+    <Content Include="SingnoCMS\newSkin\Template\Config\Config_Received.ascx" />
+    <Content Include="SingnoCMS\newSkin\Template\Config\Config_ReceivedFrame.ascx" />
+    <Content Include="SingnoCMS\newSkin\Template\Config\Config_SetLicense.ascx" />
+    <Content Include="SingnoCMS\newSkin\Template\Config\Config_Site.ascx" />
+    <Content Include="SingnoCMS\newSkin\Template\Config\Config_System.ascx" />
+    <Content Include="SingnoCMS\newSkin\Template\Config\Config_Upload.ascx" />
+    <Content Include="SingnoCMS\newSkin\Template\Config\Config_User.ascx" />
+    <Content Include="SingnoCMS\newSkin\Template\Config\Config_VisitFrame.ascx" />
+    <Content Include="SingnoCMS\newSkin\Template\Content\Content_Action.ascx" />
+    <Content Include="SingnoCMS\newSkin\Template\Content\Content_AddContent-.ascx" />
+    <Content Include="SingnoCMS\newSkin\Template\Content\Content_addContent.ascx" />
+    <Content Include="SingnoCMS\newSkin\Template\Content\Content_addInfo_xnl.ascx" />
+    <Content Include="SingnoCMS\newSkin\Template\Content\Content_manage-.ascx" />
+    <Content Include="SingnoCMS\newSkin\Template\Content\Content_manage.ascx" />
+    <Content Include="SingnoCMS\newSkin\Template\Content\Content_Recycle-.ascx" />
+    <Content Include="SingnoCMS\newSkin\Template\Content\Content_Recycle.ascx" />
+    <Content Include="SingnoCMS\newSkin\Template\Content\Content_showAttr.ascx" />
+    <Content Include="SingnoCMS\newSkin\Template\default.ascx" />
+    <Content Include="SingnoCMS\newSkin\Template\Function\Function_CreateAction.ascx" />
+    <Content Include="SingnoCMS\newSkin\Template\Function\Function_createColumns.ascx" />
+    <Content Include="SingnoCMS\newSkin\Template\Function\Function_createContent.ascx" />
+    <Content Include="SingnoCMS\newSkin\Template\Function\Function_createFiles.ascx" />
+    <Content Include="SingnoCMS\newSkin\Template\Function\Function_createIndex.ascx" />
+    <Content Include="SingnoCMS\newSkin\Template\Inc\Inc_Common.ascx" />
+    <Content Include="SingnoCMS\newSkin\Template\Inc\Inc_Login.ascx" />
+    <Content Include="SingnoCMS\newSkin\Template\Init.ascx" />
+    <Content Include="SingnoCMS\newSkin\Template\install\Iinstall_siteAction.html" />
+    <Content Include="SingnoCMS\newSkin\Template\install\Images\install_logo.gif" />
+    <Content Include="SingnoCMS\newSkin\Template\install\Images\shadow_bg.gif" />
+    <Content Include="SingnoCMS\newSkin\Template\install\Images\shadow_bottom.gif" />
+    <Content Include="SingnoCMS\newSkin\Template\install\install.css" />
+    <Content Include="SingnoCMS\newSkin\Template\install\Install_install.html" />
+    <Content Include="SingnoCMS\newSkin\Template\Main.ascx" />
+    <Content Include="SingnoCMS\newSkin\Template\Model\Model_action.ascx" />
+    <Content Include="SingnoCMS\newSkin\Template\Model\Model_AddField.ascx" />
+    <Content Include="SingnoCMS\newSkin\Template\Model\Model_addModel.ascx" />
+    <Content Include="SingnoCMS\newSkin\Template\Model\Model_AddStyle.ascx" />
+    <Content Include="SingnoCMS\newSkin\Template\Model\Model_manageModel.ascx" />
+    <Content Include="SingnoCMS\newSkin\Template\Model\Model_ModelManage.ascx" />
+    <Content Include="SingnoCMS\newSkin\Template\Model\Model_setModelPage.ascx" />
+    <Content Include="SingnoCMS\newSkin\Template\Model\Model_ShowField.ascx" />
+    <Content Include="SingnoCMS\newSkin\Template\Other\Other_addLink.ascx" />
+    <Content Include="SingnoCMS\newSkin\Template\Other\Other_manageComments.ascx" />
+    <Content Include="SingnoCMS\newSkin\Template\Other\Other_manageCommentsFrame.ascx" />
+    <Content Include="SingnoCMS\newSkin\Template\Other\Other_manageFiles.ascx" />
+    <Content Include="SingnoCMS\newSkin\Template\Other\Other_manageGB.ascx" />
+    <Content Include="SingnoCMS\newSkin\Template\Other\Other_manageLinks.ascx" />
+    <Content Include="SingnoCMS\newSkin\Template\TemplateLabel\Templatel_addLabel.ascx" />
+    <Content Include="SingnoCMS\newSkin\Template\TemplateLabel\Templatel_manageRule.ascx" />
+    <Content Include="SingnoCMS\newSkin\Template\TemplateLabel\Template_action.ascx" />
+    <Content Include="SingnoCMS\newSkin\Template\TemplateLabel\Template_addProject.ascx" />
+    <Content Include="SingnoCMS\newSkin\Template\TemplateLabel\Template_addTemplate.ascx" />
+    <Content Include="SingnoCMS\newSkin\Template\TemplateLabel\Template_createRule.ascx" />
+    <Content Include="SingnoCMS\newSkin\Template\TemplateLabel\Template_manageLabel.ascx" />
+    <Content Include="SingnoCMS\newSkin\Template\TemplateLabel\Template_manageTemplate.ascx" />
+    <Content Include="SingnoCMS\newSkin\Template\TemplateLabel\Template_matchTemplates.ascx" />
+    <Content Include="SingnoCMS\newSkin\Template\TemplateLabel\Template_ModifyTemplate.ascx" />
+    <Content Include="SingnoCMS\newSkin\Template\TemplateLabel\Template_setCreateRule.ascx" />
+    <Content Include="SingnoCMS\newSkin\Template\T_main.html" />
+    <Content Include="SingnoCMS\newSkin\Template\User\User_addUser.ascx" />
+    <Content Include="SingnoCMS\newSkin\Template\User\User_manageUser.ascx" />
+    <Content Include="SingnoCMS\newSkin\Template\User\User_manageUserGroups.ascx" />
+    <Content Include="SingnoCMS\newSkin\User\User_addUser.aspx" />
+    <Content Include="SingnoCMS\newSkin\User\User_manageUser.aspx" />
+    <Content Include="SingnoCMS\newSkin\User\User_manageUserGroups.aspx" />
+    <Content Include="SingnoCMS\newSkin\WorkIndex.html" />
+    <Content Include="testLog.aspx" />
+    <Content Include="VerifyCode.ashx" />
+    <None Include="GlobalFiles\Common\editor\wymeditor\wymeditor\plugins\tidy\README" />
+    <None Include="GlobalFiles\Common\editor\wymeditor\wymeditor\plugins\tidy\tidy.php" />
+    <None Include="GlobalFiles\Common\editor\wymeditor\wymeditor\skins\silver\COPYING" />
+    <None Include="GlobalFiles\Common\editor\wymeditor\wymeditor\skins\silver\README" />
+    <Content Include="GlobalFiles\Common\editor\xHtmlEditor\web.config" />
+    <Content Include="GlobalFiles\Config\backGroupSite.config" />
+    <Content Include="GlobalFiles\Config\Data.config" />
+    <Content Include="GlobalFiles\Config\Rights.config" />
+    <Content Include="GlobalFiles\Config\System.config" />
+    <None Include="singno.snk" />
+    <None Include="SingnoCMS\Common\editor\wymeditor\wymeditor\plugins\tidy\README" />
+    <None Include="SingnoCMS\Common\editor\wymeditor\wymeditor\plugins\tidy\tidy.php" />
+    <None Include="SingnoCMS\Common\editor\wymeditor\wymeditor\skins\silver\COPYING" />
+    <None Include="SingnoCMS\Common\editor\wymeditor\wymeditor\skins\silver\README" />
+    <Content Include="SingnoCMS\Common\editor\xHtmlEditor\web.config" />
+    <Compile Include="BasePage.cs" />
+    <Compile Include="testLog.aspx.cs">
+      <DependentUpon>testLog.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="testLog.aspx.designer.cs">
+      <DependentUpon>testLog.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UnhandledExceptionModule .cs" />
+    <Compile Include="VerifyCode.ashx.cs">
+      <DependentUpon>VerifyCode.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="SingNoCMS.Web.BackgroundBasePage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SingNoCMS.Web.WebHandler.cs" />
+    <Compile Include="WebPage.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Content Include="SingnoCMS\Common\datepicker\calendar.js" />
+    <Content Include="SingnoCMS\Common\datepicker\config.js" />
+    <Content Include="SingnoCMS\Common\datepicker\lang\en.js" />
+    <Content Include="SingnoCMS\Common\datepicker\lang\zh-cn.js" />
+    <Content Include="SingnoCMS\Common\datepicker\lang\zh-tw.js" />
+    <Content Include="SingnoCMS\Common\datepicker\My97DatePicker.htm" />
+    <Content Include="SingnoCMS\Common\datepicker\skin\blue\bg.jpg" />
+    <Content Include="SingnoCMS\Common\datepicker\skin\blue\btnbg.jpg" />
+    <Content Include="SingnoCMS\Common\datepicker\skin\blue\datepicker.css" />
+    <Content Include="SingnoCMS\Common\datepicker\skin\blue\down.jpg" />
+    <Content Include="SingnoCMS\Common\datepicker\skin\blue\left.gif" />
+    <Content Include="SingnoCMS\Common\datepicker\skin\blue\navLeft.gif" />
+    <Content Include="SingnoCMS\Common\datepicker\skin\blue\navRight.gif" />
+    <Content Include="SingnoCMS\Common\datepicker\skin\blue\qs.jpg" />
+    <Content Include="SingnoCMS\Common\datepicker\skin\blue\right.gif" />
+    <Content Include="SingnoCMS\Common\datepicker\skin\blue\up.jpg" />
+    <Content Include="SingnoCMS\Common\datepicker\skin\datePicker.gif" />
+    <Content Include="SingnoCMS\Common\datepicker\skin\default\datepicker.css" />
+    <Content Include="SingnoCMS\Common\datepicker\skin\default\down.jpg" />
+    <Content Include="SingnoCMS\Common\datepicker\skin\default\left.gif" />
+    <Content Include="SingnoCMS\Common\datepicker\skin\default\navLeft.gif" />
+    <Content Include="SingnoCMS\Common\datepicker\skin\default\navRight.gif" />
+    <Content Include="SingnoCMS\Common\datepicker\skin\default\qs.jpg" />
+    <Content Include="SingnoCMS\Common\datepicker\skin\default\right.gif" />
+    <Content Include="SingnoCMS\Common\datepicker\skin\default\up.jpg" />
+    <Content Include="SingnoCMS\Common\datepicker\skin\WdatePicker.css" />
+    <Content Include="SingnoCMS\Common\datepicker\skin\whyGreen\bg.jpg" />
+    <Content Include="SingnoCMS\Common\datepicker\skin\whyGreen\datepicker.css" />
+    <Content Include="SingnoCMS\Common\datepicker\skin\whyGreen\down.jpg" />
+    <Content Include="SingnoCMS\Common\datepicker\skin\whyGreen\left.gif" />
+    <Content Include="SingnoCMS\Common\datepicker\skin\whyGreen\navLeft.gif" />
+    <Content Include="SingnoCMS\Common\datepicker\skin\whyGreen\navRight.gif" />
+    <Content Include="SingnoCMS\Common\datepicker\skin\whyGreen\qs.jpg" />
+    <Content Include="SingnoCMS\Common\datepicker\skin\whyGreen\right.gif" />
+    <Content Include="SingnoCMS\Common\datepicker\skin\whyGreen\up.jpg" />
+    <Content Include="SingnoCMS\Common\datepicker\skin\whyGreen\ymbg.jpg" />
+    <Content Include="SingnoCMS\Common\datepicker\WdatePicker.js" />
+    <Content Include="SingnoCMS\Common\Validator\css\validator.css" />
+    <Content Include="SingnoCMS\Common\Validator\css\validatorAuto.css" />
+    <Content Include="SingnoCMS\Common\Validator\images\bt.gif" />
+    <Content Include="SingnoCMS\Common\Validator\images\onCorrect.gif" />
+    <Content Include="SingnoCMS\Common\Validator\images\onError.gif" />
+    <Content Include="SingnoCMS\Common\Validator\images\onFocus.gif" />
+    <Content Include="SingnoCMS\Common\Validator\images\onLoad.gif" />
+    <Content Include="SingnoCMS\Common\Validator\images\onShow.gif" />
+    <Content Include="SingnoCMS\Common\Validator\images\onSuccess.gif" />
+    <Content Include="SingnoCMS\Common\Validator\js\formValidator.js" />
+    <Content Include="SingnoCMS\Common\Validator\js\formValidatorRegex.js" />
+    <Content Include="SingnoCMS\Common\Validator\js\jquery_last.js" />
+    <Content Include="SingnoCMS\Common\Validator\js\WdatePicker.js" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>4815</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>
